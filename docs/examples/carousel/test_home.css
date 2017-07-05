@@ -39,8 +39,11 @@ body {
 
 /* Carousel base class */
 .carousel {/*框架*/
+  margin:auto;/*框架置中*/
+  width:70%;
   height: 500px;
   margin-bottom: 60px;
+  top:20px;/*navbar-static-top無法使用 暫時作法*/
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -53,12 +56,13 @@ body {
   background-color: #777;
 }
 .carousel-inner > .item > img {
-  position: absolute;
-  top: 0;/*距離上面*/
+  margin: auto;/*圖片置中*/
+  position: relative;/*可調整(相對於absolute)*/
+  top: 100px;/*距離上面*/
   left: 0;
-  min-width: 100%;/*圖片寬度*/
+  /*min-width: 100%;*//*圖片寬度*/
   
-  height: 500px;/*圖片高度*/
+  /*height: 400px;*//*圖片高度*/
 }
 
 
@@ -127,6 +131,7 @@ body {
     font-size: 50px;
   }
 }
+
 
 @media (min-width: 992px) {
   .featurette-heading {
