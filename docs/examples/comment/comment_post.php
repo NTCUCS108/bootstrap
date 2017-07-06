@@ -10,7 +10,7 @@ if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($g
 {
 	mysql_query("Insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContent','','')");
 	$checked=1;
-	header("location:show.php");
+	header("location:comment_show.php");
 }	
 else
 	$checked=0;

@@ -8,7 +8,7 @@ $data = mysql_query("select * from comment order by guestTime desc");
 <head>
 </head>
 <body>
-<button onclick="location.href = 'comment.php';">我要留言</button>
+<button onclick="location.href = 'comment_post.php';">我要留言</button>
 <button onclick="location.href = '../carousel/test_home.php';">回首頁</button>
 <?php
 for($i=1;$i<=mysql_num_rows($data);$i++){
