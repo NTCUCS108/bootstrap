@@ -14,7 +14,7 @@ $data = mysql_query("select * from comment order by guestTime desc");
 for($i=1;$i<=mysql_num_rows($data);$i++){
 	$rs = mysql_fetch_row($data);
 ?>
-<table align="center" width="60%">
+<table align="center" width="60%" border="1">
 	<tr>
 		<td width="20%"><?php echo "主旨："?></td>
 		<td width="80%"><?php echo $rs[4]?></td><!--用$rs["guestSubject"]無法顯示-->
