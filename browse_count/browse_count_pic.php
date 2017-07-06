@@ -2,7 +2,9 @@
 <html>
 <body>
 <?php
-//session_start();//防灌水
+//session_start();
+//防灌水
+//2017-7-6已處理，session_start()需在顯示網頁前執行
 $file = fopen("../../../browse_count/num.txt","r");//which file do you want to read
 $num = fgets($file);
 fclose($file);
