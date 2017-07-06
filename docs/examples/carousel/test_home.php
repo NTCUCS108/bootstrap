@@ -52,7 +52,7 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="./test_home.html">首頁</a></li>
                 <li><a href="#company">公司簡介</a></li>
-				<li><a href="#product">產品簡介</a></li>
+				<li><a href="../blog/index.html">產品簡介</a></li>
                 <li><a href="#contact">連絡方式</a></li>
                 <!--<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
