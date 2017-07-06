@@ -50,7 +50,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="./test_home.html">首頁</a></li>
+                <li class="active"><a href="./test_home.php">首頁</a></li>
                 <li><a href="#company">公司簡介</a></li>
 				<li><a href="../blog/index.html">產品簡介</a></li>
                 <li><a href="#contact">連絡方式</a></li>
