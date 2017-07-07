@@ -56,7 +56,7 @@ if($_SESSION["v"]=="yes")
 <?php
 if(isset($_POST["account"]) and isset($_POST["password"]))
 {
-include("../comment/comment_connect.php");
+include("../comment_withbrowse/comment_connect.php");
 $account = $_POST["account"];
 $password = $_POST["password"];
 $data = mysql_query("select * from admin where account = '$account' and password = '$password'");
