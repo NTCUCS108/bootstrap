@@ -54,7 +54,8 @@
                 <li><a href="#company">公司簡介</a></li>
 				<li><a href="../blog/index.html">產品簡介</a></li>
                 <li><a href="#contact">連絡方式</a></li>
-				<li><a href="../comment/comment_show.php">留言板</a></li>
+				<li><a href="../comment_withbrowse/comment_browse.php">留言板</a></li>
+				<li><a href="../signin/comment_signin_withbrowse.php">管理留言板</a></li>
                 <!--<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
