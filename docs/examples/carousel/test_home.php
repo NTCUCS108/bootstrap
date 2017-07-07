@@ -34,7 +34,7 @@
   <?php
 	session_start();//2017-7-6修復browse_count_pic
   ?>
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper"><!--使navbar往下-->
       <div class="container">
 
         <nav class="navbar navbar-inverse navbar-static-top" role="navigation"><!--為什麼不能用static???-->
@@ -81,7 +81,7 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li><!--或許可以改成php寫法？讀取資料庫-->
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>

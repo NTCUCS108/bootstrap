@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION["v"]=="yes")
+	header("location:../comment/comment_admin.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,7 +61,10 @@ $account = $_POST["account"];
 $password = $_POST["password"];
 $data = mysql_query("select * from admin where account = '$account' and password = '$password'");
 	if(mysql_num_rows($data)>=1)
+	{
+		$_SESSION['v']="yes";
 		header("location:../comment/comment_admin.php");
+	}
 	else
 		echo "<p align='center'>查無此人</p>";
 }

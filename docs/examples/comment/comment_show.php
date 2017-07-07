@@ -8,6 +8,7 @@ $data = mysql_query("select * from comment order by guestTime desc");
 <head>
 </head>
 <body>
+<h1 align="center">留言板</h1><br>
 <button onclick="location.href = 'comment_post.php';">我要留言</button>
 <button onclick="location.href = '../carousel/test_home.php';">回首頁</button>
 <?php
@@ -43,6 +44,14 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 		<td width="20%"><?php echo "時間："?></td>
 		<td width="80%"><?php echo $rs[5]?></td>
 	</tr>
+	<?php if($rs[7]!=""){?>
+            <tr>
+              <td colspan="2" style="background:#999; color:white; text-align:center">站長回覆</td>
+            </tr>
+            <tr>
+              <td colspan="2"><?php echo $rs[7];?></td>
+            </tr>
+    <?php } ?>
 </table>
 <br>
 <?php

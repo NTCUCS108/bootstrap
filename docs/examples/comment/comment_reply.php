@@ -5,7 +5,15 @@ if($_SESSION['v']!="yes")
 	header("location:../signin/comment_signin.php");
 }
 include("comment_connect.php");
-$data = mysql_query("select * from comment order by guestTime desc");
+$id = $_GET["id"];
+$guestReply = $_POST["reply"];
+$data = mysql_query("select * from comment where guestID = '$id'");
+if(isset($guestReply))
+{
+	$time = date("Y/m/d G:i:s");
+	mysql_query("update comment set guestReply='$guestReply',guestReplyTime='$time' where guestID='$id'");
+	header("location:comment_admin.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,21 +21,13 @@ $data = mysql_query("select * from comment order by guestTime desc");
 <head>
 </head>
 <body>
-<h1 align="center">管理者頁面</h1>
+<h1 align="center">回覆頁面</h1>
 <?php
-for($i=1;$i<=mysql_num_rows($data);$i++){
-	$rs = mysql_fetch_row($data);
+$rs = mysql_fetch_row($data);
 ?>
 <table align="center" width="60%" border="1">
 	<tr>
 		<td width="20%"><?php echo $rs[4]?></td>
-		<td width="80%"><a href="comment_reply.php?id=<?php echo $rs[0];?>">回覆</a> 
-						<a href="comment_delete.php?id=<?php echo $rs[0];?>">刪除</a>
-		</td><!--用$rs["guestSubject"]無法顯示-->
-	</tr>
-	<tr>
-		<td width="20%"><?php echo "ID："?></td>
-		<td width="80%"><?php echo $rs[0]?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "暱稱："?></td>
@@ -49,18 +49,13 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 		<td width="20%"><?php echo "時間："?></td>
 		<td width="80%"><?php echo $rs[5]?></td>
 	</tr>
-	<?php if($rs[7]!=""){?>
-            <tr>
-              <td colspan="2" style="background:#999; color:white; text-align:center">站長回覆</td>
-            </tr>
-            <tr>
-              <td colspan="2"><?php echo $rs[7];?></td>
-            </tr>
-    <?php } ?>
 </table>
 <br>
-<?php
-}
-?>
+<form id="reply_form" name="reply_form" method="post" align="center">
+回覆內容：
+<br><textarea name="reply" id="reply" style="width:60%;" rows="8">
+</textarea><br>
+<input type="submit" value="送出">
+</form>
 </body>
 </html>

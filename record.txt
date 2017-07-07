@@ -1,9 +1,16 @@
 未開始：
 執行中：
 	docs/examples/blog/index.html(產品介紹子頁)
-	docs/examples/carousel/test_home.php(首頁)
+	docs/examples/carousel/test_home.php(首頁)(投影片可換成php讀取資料庫的寫法)
+	
+已完成：
+	(是否進行留言分類？
+	 留言顯示方式？只顯示subject詳細內容需點入or直接顯示？
+	)
 	docs/examples/comment/comment_show.php(顯示所有留言)
-	docs/examples/comment/comment_admin.php(管理者管理留言頁面)
 	docs/examples/comment/comment_post.php(撰寫留言)
 	docs/examples/signin/comment_signin.php(管理者登錄管理留言頁面)
-已完成：
+	docs/examples/comment/comment_admin.php(管理者瀏覽留言頁面)
+	docs/examples/comment/comment_reply.php(管理者回覆留言頁面)
+	docs/examples/comment/comment_delete.php(管理者刪除留言頁面)
+	
