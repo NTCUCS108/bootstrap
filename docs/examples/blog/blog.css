@@ -99,12 +99,27 @@ h6, .h6 {
   margin-bottom: 0;
   font-size: 50px;
   font-weight: normal;
+  color: #4682B4;
 }
 .blog-description {
   font-size: 20px;
   color: #999;
 }
 
+/*blog-table有些功能沒有用處*/
+
+.blog-table { 
+  border: 2px #c6d3fe solid;
+  border-collapse:collapse;
+  line-height: 30px;
+  letter-spacing: 3px;
+} 
+.td{ 
+  background-color:#ffdab9;
+}
+.tr{ 
+  background-color:#d9dff5;
+} 
 
 /*
  * Main column and sidebar layout
@@ -120,11 +135,13 @@ h6, .h6 {
   padding: 10px;
   margin:0 10px 10px 10px;
   position: fixed;
+  background-color: #ffdab9;
+  border-radius: 8px;
 }
 .sidebar-module-inset {
   padding: 15px;
-  margin:0 -30px;
-  background-color: #ffdab9;
+  margin:-150px 10px;
+  background-color: #c6d3fe;
   border-radius: 8px;
   position: absolute;
 }
@@ -174,7 +191,7 @@ h6, .h6 {
   color: #999;
   text-align: center;
   background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #cecece;
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
