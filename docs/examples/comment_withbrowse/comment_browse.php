@@ -30,9 +30,9 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 		<td width="85%"><?php echo "主旨：<a href='comment_show.php?id=$rs[0]'>$rs[4]</a>"?></td><!--用$rs["guestSubject"]無法顯示-->
 		<?php 
 			if($rs[8]!="")
-				echo "<td width='5%'>y</td>";
+				echo "<td width='5%' style='color:green;'>y</td>";
 			else
-				echo "<td width='5%'>n</td>";
+				echo "<td width='5%' style='color:red;'>n</td>";
 		?>
 		
 	</tr>
