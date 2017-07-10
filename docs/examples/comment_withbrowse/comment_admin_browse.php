@@ -17,6 +17,14 @@ if(!isset($_GET["guestContentType"]))
 	$search="不限";
 else
 	 $search = $_GET["guestContentType"];
+if(!isset($_GET["sortorder"]))
+	$sortorder="guestTime";
+else
+	$sortorder=$_GET["sortorder"];
+if(!isset($_GET["sortway"]))
+	$sortway="desc";
+else
+	$sortway=$_GET["sortway"];
 $num = 10;//一頁筆數
 if($search=="不限")//符合的資料共有幾筆
 	$data = mysql_query("select * from comment");
@@ -32,13 +40,13 @@ if(!isset($page))
 $start = ($page-1)*$num;//跟著頁數變化資料從第幾筆開始顯示
 $page_num = ceil(mysql_num_rows($data)/$num);//一共幾頁
 if($search=="不限")
-	$data = mysql_query("select * from comment order by guestTime desc limit $start,$num");//抓取正確範圍的資料
+	$data = mysql_query("select * from comment order by $sortorder $sortway limit $start,$num");//抓取正確範圍的資料
 else if($search=="已回覆")
-	$data = mysql_query("select * from comment where guestReply != '' order by guestTime desc limit $start,$num");
+	$data = mysql_query("select * from comment where guestReply != '' order by $sortorder $sortway limit $start,$num");
 else if($search=="未回覆")
-	$data = mysql_query("select * from comment where guestReply = '' order by guestTime desc limit $start,$num");
+	$data = mysql_query("select * from comment where guestReply = '' order by $sortorder $sortway limit $start,$num");
 else
-	$data = mysql_query("select * from comment where guestContentType = '$search' order by guestTime desc limit $start,$num");
+	$data = mysql_query("select * from comment where guestContentType = '$search' order by $sortorder $sortway limit $start,$num");
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +65,20 @@ else
 	echo '<option value="其他"';if($search=="其他") echo ' selected';echo '>其他</option>';
 	echo '<option value="已回覆"';if($search=="已回覆") echo ' selected';echo '>已回覆</option>';
 	echo '<option value="未回覆"';if($search=="未回覆") echo ' selected';echo '>未回覆</option>';
+?>
+</select><br>
+排序類別：
+<select name="sortorder">
+<?php
+	echo '<option value="guestTime"';if($sortorder=="guestTime") echo ' selected';echo '>時間</option>';
+	echo '<option value="browse_count"';if($sortorder=="browse_count") echo ' selected';echo '>瀏覽人數</option>';
+?>
+</select><br>
+排序順序：
+<select name="sortway">
+<?php
+	echo '<option value="desc"';if($sortway=="desc") echo ' selected';echo '>新or多</option>';
+	echo '<option value=""';if($sortway=="") echo ' selected';echo '>舊or少</option>';
 ?>
 </select><br>
 <input type="submit" value="送出">
@@ -94,7 +116,7 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 <p align="center">
 <?php
 for($i=1;$i<=$page_num;$i++)
-	echo "<a href='comment_admin_browse.php?guestContentType=$search&page=$i'>$i </a>"//顯示頁數
+	echo "<a href='comment_admin_browse.php?guestContentType=$search&sortorder=$sortorder&sortway=$sortway&page=$i'>$i </a>"//顯示頁數
 ?>
 </p>
 </body>
