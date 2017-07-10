@@ -25,17 +25,17 @@ $data = mysql_query("select * from comment order by guestTime desc limit $start,
 <button onclick="location.href = '../carousel/test_home.php';">回首頁</button>
 <?php
 for($i=1;$i<=mysql_num_rows($data);$i++){
-	$rs = mysql_fetch_row($data);
+	$rs = mysql_fetch_assoc($data);
 ?>
 <table align="center" width="60%" border="1">
 	<tr>
 		<td width="5%">
 			<input type="checkbox">
 		</td>
-		<td width="10%"><?php echo "ID：$rs[0]"?></td>
-		<td width="80%"><?php echo "主旨：<a href='comment_admin_show.php?id=$rs[0]'>$rs[4]</a>"?></td><!--用$rs["guestSubject"]無法顯示-->
+		<td width="10%"><?php echo "ID：$rs[guestID]"?></td>
+		<td width="80%"><?php echo "主旨：<a href='comment_admin_show.php?id=$rs[guestID]'>$rs[guestSubject]</a>"?></td>
 		<?php 
-			if($rs[8]!="")
+			if($rs[guestReply]!="")
 				echo "<td width='5%' style='color:green;'>y</td>";
 			else
 				echo "<td width='5%' style='color:red;'>n</td>";

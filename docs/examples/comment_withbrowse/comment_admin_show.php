@@ -9,7 +9,7 @@ $id = $_GET["id"];
 if(!isset($id))
 	$id = 1;
 $data = mysql_query("select * from comment where guestID = '$id'");
-$rs = mysql_fetch_row($data);
+$rs = mysql_fetch_assoc($data);
 ?>
 
 <!DOCTYPE html>
@@ -25,45 +25,45 @@ $rs = mysql_fetch_row($data);
 <table align="center" width="60%" border="1">
 	<tr>
 		<td width="20%"><?php echo "主旨："?></td>
-		<td width="80%"><?php echo $rs[4]?></td><!--用$rs["guestSubject"]無法顯示-->
+		<td width="80%"><?php echo $rs[guestSubject]?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "ID："?></td>
-		<td width="80%"><?php echo $rs[0]?></td>
+		<td width="80%"><?php echo $rs[guestID]?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "暱稱："?></td>
-		<td width="80%"><?php echo $rs[1]?></td>
+		<td width="80%"><?php echo $rs[guestName]?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "信箱："?></td>
-		<td width="80%"><?php echo $rs[2]?></td>
+		<td width="80%"><?php echo $rs[guestEmail]?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "性別："?></td>
-		<td width="80%"><?php if($rs[3]==0)echo "女";else echo "男";?></td>
+		<td width="80%"><?php if($rs[guestGender]==0)echo "女";else echo "男";?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "內容："?></td>
-		<td width="80%"><?php echo $rs[7]?></td><!--無法換行-->
+		<td width="80%"><?php echo $rs[guestContent]?></td><!--無法換行-->
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "時間："?></td>
-		<td width="80%"><?php echo $rs[5]?></td>
+		<td width="80%"><?php echo $rs[guestTime]?></td>
 	</tr>
-	<?php if($rs[8]!=""){?>
+	<?php if($rs[guestReply]!=""){?>
             <tr>
               <td colspan="2" style="background:#999; color:white; text-align:center">站長回覆</td>
             </tr>
             <tr>
-              <td colspan="2"><?php echo $rs[8];?></td>
+              <td colspan="2"><?php echo $rs[guestReply];?></td>
             </tr>
     <?php } ?>
 </table>
 <br>
 <p align="center">
-	<a href="comment_reply.php?id=<?php echo $rs[0];?>">回覆</a>
-	<a href="comment_delete.php?id=<?php echo $rs[0];?>">刪除</a>
+	<a href="comment_reply.php?id=<?php echo $rs[guestID];?>">回覆</a>
+	<a href="comment_delete.php?id=<?php echo $rs[guestID];?>">刪除</a>
 </p>
 </body>
 </html>
