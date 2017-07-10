@@ -1,3 +1,6 @@
+<?php
+include("connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,63 +85,38 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li><!--或許可以改成php寫法？讀取資料庫-->
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-		<li data-target="#myCarousel" data-slide-to="3"></li>
-		<li data-target="#myCarousel" data-slide-to="4"></li>
+	  <?php
+		$data = mysql_query("select * from slide order by slide_id");
+		for($i=1;$i<=mysql_num_rows($data);$i++)
+		{
+			$rs=mysql_fetch_assoc($data);
+	  ?>
+        <li data-target="#myCarousel" data-slide-to="<?php echo "$rs[slide_id]";?>" <?php if($rs[slide_id]==0) echo 'class="active";'?>></li><!--或許可以改成php寫法？讀取資料庫-->
+	<?php
+	}
+	?>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="../../../img/GDTILT6S.jpg" alt="First slide">
+	  <?php
+		$data = mysql_query("select * from slide order by slide_id");
+		for($i=1;$i<=mysql_num_rows($data);$i++)
+		{
+			$rs = mysql_fetch_assoc($data);
+	  ?>
+        <div class="item<?php if($rs["slide_id"]==0) echo ' active';?>">
+          <img src="<?php echo "$rs[img_src]";?>" alt="<?php echo "$rs[alt]";?>">
           <div class="container">
             <div class="carousel-caption">
-              <h1>GDTILT6S無線傾度盤</h1>
-              <p>介紹</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">了解更多</a></p>
+              <h1><?php echo "$rs[headers]";?></h1>
+              <p><?php echo "$rs[description]";?></p>
+              <p><a class="btn btn-lg btn-primary" href="<?php echo "$rs[link_src]";?>" role="button"><?php echo "$rs[link_description]";?></a></p>
             </div>
           </div>
         </div>
-        <div class="item">
-          <img src="../../../img/GINDER D1UM.jpg" alt="Second slide" width="250" height="200">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>GINDER D1UM 位移訊號擷取器</h1>
-              <p>介紹</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">了解更多</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="../../../img/GINDER T01C.jpg" alt="Third slide" width="250" height="200">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>GINDER T01C</h1>
-              <p>介紹</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">了解更多</a></p>
-            </div>
-          </div>
-        </div>
-		<div class="item">
-          <img src="../../../img/GINDER WR10HZ.jpg" alt="Forth slide" width="250" height="200">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>GINDER WR10HZ無線協調器</h1>
-              <p>介紹</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">了解更多</a></p>
-            </div>
-          </div>
-        </div>
-		<div class="item">
-          <img src="../../../img/JD-WL001.jpg" alt="Fifth slide" width="250" height="200">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>JD-WL001無線數位型荷重元訊號處理模組</h1>
-              <p>介紹</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">了解更多</a></p>
-            </div>
-          </div>
-        </div>
+		<?php
+		}
+		?>
+        
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

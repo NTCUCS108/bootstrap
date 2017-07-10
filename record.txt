@@ -4,8 +4,6 @@
 	fb式留言(動態資料庫?)
 執行中：
 	docs/examples/blog/index.html(產品介紹子頁)
-	docs/examples/carousel/test_home.php(首頁)(投影片可換成php讀取資料庫的寫法)
-	
 已完成：
 	直接顯示：
 		docs/examples/comment/comment_show.php(顯示所有留言)(2017-7-6)
@@ -23,4 +21,5 @@
 		docs/examples/comment_withbrowse/comment_admin_show.php(管理者瀏覽單項詳細留言頁面)(2017-7-7)
 		docs/examples/comment_withbrowse/comment_reply.php(管理者回覆留言頁面)(2017-7-7)
 		docs/examples/comment_withbrowse/comment_delete.php(管理者刪除留言頁面)(2017-7-7)
+	docs/examples/carousel/test_home.php(首頁)(投影片可換成php讀取資料庫的寫法)
 	
