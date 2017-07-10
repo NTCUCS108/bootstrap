@@ -1,10 +1,18 @@
 <?php
+session_start();
 include("comment_connect.php");
 $id = $_GET["id"];
 if(!isset($id))
 	$id = 1;
 $data = mysql_query("select * from comment where guestID = '$id'");
 $rs = mysql_fetch_assoc($data);
+if($_SESSION["check $id"]!="v")//瀏覽人數更新
+{
+	$browse_count = $rs['browse_count'];
+	$_SESSION["check $id"]="v";
+	$browse_count++;
+	mysql_query("update comment set browse_count = '$browse_count' where guestID = '$id'");
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +33,10 @@ $rs = mysql_fetch_assoc($data);
 	<tr>
 		<td width="20%"><?php echo "類型："?></td>
 		<td width="80%"><?php echo $rs[guestContentType]?></td>
+	</tr>
+	<tr>
+		<td width="20%"><?php echo "瀏覽次數："?></td>
+		<td width="80%"><?php echo $rs[browse_count]?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "ID："?></td>

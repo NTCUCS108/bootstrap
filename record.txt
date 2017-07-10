@@ -1,6 +1,5 @@
 未開始：
 	留言排序
-	留言瀏覽人數
 	上下則留言
 	fb式留言(動態資料庫?)
 執行中：
@@ -16,11 +15,11 @@
 		docs/examples/comment/comment_reply.php(管理者回覆留言頁面)(2017-7-6)
 		docs/examples/comment/comment_delete.php(管理者刪除留言頁面)(2017-7-6)
 	只顯示subject詳細內容需點入：
-		docs/examples/comment_withbrowse/comment_browse.php(顯示多項概略留言)(2017-7-7)(含留言分類)(2017-7-10)
+		docs/examples/comment_withbrowse/comment_browse.php(顯示多項概略留言)(2017-7-7)(含留言分類、留言瀏覽人數)(2017-7-10)
 		docs/examples/comment_withbrowse/comment_show.php(顯示單項詳細留言)(2017-7-7)
 		docs/examples/comment_withbrowse/comment_post.php(撰寫留言)(2017-7-7)
 		docs/examples/signin/comment_signin_withbrowse.php(管理者登錄管理留言頁面)(2017-7-7)
-		docs/examples/comment_withbrowse/comment_admin_browse.php(管理者瀏覽多項概略留言頁面)(2017-7-7)(含留言分類、管理者多則留言刪除)(2017-7-10)
+		docs/examples/comment_withbrowse/comment_admin_browse.php(管理者瀏覽多項概略留言頁面)(2017-7-7)(含留言分類、管理者多則留言刪除、留言瀏覽人數)(2017-7-10)
 		docs/examples/comment_withbrowse/comment_admin_show.php(管理者瀏覽單項詳細留言頁面)(2017-7-7)
 		docs/examples/comment_withbrowse/comment_reply.php(管理者回覆留言頁面)(2017-7-7)
 		docs/examples/comment_withbrowse/comment_delete.php(管理者刪除留言頁面)(2017-7-7)

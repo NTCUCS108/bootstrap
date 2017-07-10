@@ -32,6 +32,10 @@ $rs = mysql_fetch_assoc($data);
 		<td width="80%"><?php echo $rs[guestContentType]?></td>
 	</tr>
 	<tr>
+		<td width="20%"><?php echo "瀏覽次數："?></td>
+		<td width="80%"><?php echo $rs[browse_count]?></td>
+	</tr>
+	<tr>
 		<td width="20%"><?php echo "ID："?></td>
 		<td width="80%"><?php echo $rs[guestID]?></td>
 	</tr>

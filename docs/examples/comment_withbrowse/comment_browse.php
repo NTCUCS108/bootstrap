@@ -49,7 +49,8 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 	<tr>
 		<td width="10%"><?php echo "ID：$rs[guestID]"?></td>
 		<td width="15%"><?php echo "類型：$rs[guestContentType]"?></td>
-		<td width="70%"><?php echo "主旨：<a href='comment_show.php?id=$rs[guestID]'>$rs[guestSubject]</a>"?></td>
+		<td width="65%"><?php echo "主旨：<a href='comment_show.php?id=$rs[guestID]'>$rs[guestSubject]</a>"?></td>
+		<td width="5%"><?php echo $rs[browse_count]?></td>
 		<?php 
 			if($rs[guestReply]!="")
 				echo "<td width='5%' style='color:green;'>y</td>";

@@ -33,7 +33,7 @@ $time=date("Y/m/d G:i:s");
 <?php
 if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($guestSubject) and isset($guestContent))
 {
-	mysql_query("Insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','')");
+	mysql_query("Insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','','')");
 	header("location:comment_browse.php");
 }	
 else

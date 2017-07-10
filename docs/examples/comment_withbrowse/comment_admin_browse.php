@@ -61,9 +61,10 @@ else
 </select><br>
 <input type="submit" value="送出">
 </form>
+<button onclick="location.href = '../carousel/test_home.php';">回首頁</button>
 <form name="delete comment" method="post">
 <input type="submit" value="刪除勾選的留言">
-<button onclick="location.href = '../carousel/test_home.php';">回首頁</button>
+
 <?php
 for($i=1;$i<=mysql_num_rows($data);$i++){
 	$rs = mysql_fetch_assoc($data);
@@ -75,7 +76,8 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 		</td>
 		<td width="10%"><?php echo "ID：$rs[guestID]"?></td>
 		<td width="15%"><?php echo "類型：$rs[guestContentType]"?></td>
-		<td width="65%"><?php echo "主旨：<a href='comment_admin_show.php?id=$rs[guestID]'>$rs[guestSubject]</a>"?></td>
+		<td width="60%"><?php echo "主旨：<a href='comment_admin_show.php?id=$rs[guestID]'>$rs[guestSubject]</a>"?></td>
+		<td width="5%"><?php echo $rs[browse_count]?></td>
 		<?php 
 			if($rs[guestReply]!="")
 				echo "<td width='5%' style='color:green;'>y</td>";
