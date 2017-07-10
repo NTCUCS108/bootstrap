@@ -23,6 +23,10 @@ $rs = mysql_fetch_assoc($data);
 		<td width="80%"><?php echo $rs[guestSubject]?></td><!--用$rs["guestSubject"]無法顯示-->
 	</tr>
 	<tr>
+		<td width="20%"><?php echo "類型："?></td>
+		<td width="80%"><?php echo $rs[guestContentType]?></td>
+	</tr>
+	<tr>
 		<td width="20%"><?php echo "ID："?></td>
 		<td width="80%"><?php echo $rs[guestID]?></td>
 	</tr>
