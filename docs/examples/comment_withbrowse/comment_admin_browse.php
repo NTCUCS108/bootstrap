@@ -5,6 +5,13 @@ if($_SESSION['v']!="yes")
 	header("location:../signin/comment_signin_withbrowse.php");
 }
 include("comment_connect.php");
+//checkbox批次刪除
+if(isset($_POST['delete']))
+{
+$delete = $_POST['delete'];
+foreach($delete as $value)
+	mysql_query("delete from comment where guestID = '$value'");
+}
 //對資料庫的資料進行分頁
 if(!isset($_GET["guestContentType"]))
 	$search="不限";
@@ -54,6 +61,7 @@ else
 </select><br>
 <input type="submit" value="送出">
 </form>
+<form name="delete comment" method="post">
 <input type="submit" value="刪除勾選的留言">
 <button onclick="location.href = '../carousel/test_home.php';">回首頁</button>
 <?php
@@ -63,7 +71,7 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 <table align="center" width="60%" border="1">
 	<tr>
 		<td width="5%">
-			<input type="checkbox">
+			<input type="checkbox" name="delete[]" value="<?php echo $rs[guestID];?>">
 		</td>
 		<td width="10%"><?php echo "ID：$rs[guestID]"?></td>
 		<td width="15%"><?php echo "類型：$rs[guestContentType]"?></td>
@@ -80,6 +88,7 @@ for($i=1;$i<=mysql_num_rows($data);$i++){
 <?php
 }
 ?>
+</form>
 <p align="center">
 <?php
 for($i=1;$i<=$page_num;$i++)
