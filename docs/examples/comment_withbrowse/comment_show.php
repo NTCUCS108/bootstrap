@@ -1,9 +1,9 @@
 <?php
 session_start();
 include("comment_connect.php");
+if(!isset($_GET["id"]))
+	header("location:comment_browse.php");
 $id = $_GET["id"];
-if(!isset($id))
-	$id = 1;
 $data = mysql_query("select * from comment where guestID = '$id'");
 $rs = mysql_fetch_assoc($data);
 if($_SESSION["check $id"]!="v")//瀏覽人數更新
