@@ -109,7 +109,7 @@ include("connect.php");
             <div class="carousel-caption">
               <h1><?php echo "$rs[headers]";?></h1>
               <p><?php echo "$rs[description]";?></p>
-              <p><a class="btn btn-lg btn-primary" href="<?php echo "$rs[link_src]";?>" role="button"><?php echo "$rs[link_description]";?></a></p>
+              <p><a class="btn btn-lg btn-primary" href="<?php echo "$rs[link_src]";?>" role="button"><?php echo "$rs[icon]";?></a></p>
             </div>
           </div>
         </div>
