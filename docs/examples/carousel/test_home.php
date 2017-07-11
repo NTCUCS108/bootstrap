@@ -58,7 +58,7 @@ include("connect.php");
 				<li><a href="../blog/index.html">產品簡介</a></li>
                 <li><a href="#contact">連絡方式</a></li>
 				<li><a href="../comment_withbrowse/comment_browse.php">留言板</a></li>
-				<li><a href="../signin/comment_signin_withbrowse.php">管理留言板</a></li>
+				<li><a href="../signin/signin.php">管理者模式</a></li>
                 <!--<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
@@ -104,7 +104,7 @@ include("connect.php");
 			$rs = mysql_fetch_assoc($data);
 	  ?>
         <div class="item<?php if($rs["slide_id"]==0) echo ' active';?>">
-          <img src="<?php echo "$rs[img_src]";?>" alt="<?php echo "$rs[alt]";?>">
+          <img src="<?php echo "$rs[img_src]";?>" alt="<?php echo "$rs[alt]";?>" style='max-width:500px;max-height:300px;'>
           <div class="container">
             <div class="carousel-caption">
               <h1><?php echo "$rs[headers]";?></h1>

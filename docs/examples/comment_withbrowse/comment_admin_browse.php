@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION['v']!="yes")
 {
-	header("location:../signin/comment_signin_withbrowse.php");
+	header("location:../signin/signin.php");
 }
 include("comment_connect.php");
 //checkbox批次刪除
@@ -83,7 +83,7 @@ else
 </select><br>
 <input type="submit" value="送出">
 </form>
-<button onclick="location.href = '../carousel/test_home.php';">回首頁</button>
+<button onclick="location.href = '../carousel/admin.php';">回管理者頁面</button>
 <form name="delete comment" method="post">
 <input type="submit" value="刪除勾選的留言">
 
