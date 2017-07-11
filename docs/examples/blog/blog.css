@@ -114,6 +114,9 @@ h6, .h6 {
   line-height: 30px;
   letter-spacing: 3px;
 } 
+.blog-table>.td{
+	background-color:#ffdab9;
+}
 .td{ 
   background-color:#ffdab9;
 }
