@@ -34,9 +34,10 @@
           <a class="blog-nav-item active" href="#">精德實業股份有限公司</a>
           <a class="blog-nav-item" href="../carousel/test_home.php">首頁</a>
           <a class="blog-nav-item" href="#">公司簡介</a>
-          <a class="blog-nav-item" href="index.html">產品簡介</a>
+          <a class="blog-nav-item" href="product.php">產品簡介</a>
           <a class="blog-nav-item" href="#">聯絡方式</a>
-		  <a class="blog-nav-item" href="../comment/comment_show.php">留言板</a>
+		  <a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a>
+		  <a class="blog-nav-item" href="../signin/comment_signin_withbrowse.php">管理留言板</a>
         </nav>
       </div>
     </div>

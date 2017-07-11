@@ -55,7 +55,7 @@ include("connect.php");
               <ul class="nav navbar-nav">
                 <li class="active"><a href="./test_home.php">首頁</a></li>
                 <li><a href="#company">公司簡介</a></li>
-				<li><a href="../blog/index.html">產品簡介</a></li>
+				<li><a href="../blog/product.php">產品簡介</a></li>
                 <li><a href="#contact">連絡方式</a></li>
 				<li><a href="../comment_withbrowse/comment_browse.php">留言板</a></li>
 				<li><a href="../signin/comment_signin_withbrowse.php">管理留言板</a></li>
