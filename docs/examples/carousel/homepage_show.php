@@ -17,7 +17,7 @@ $rs=mysql_fetch_assoc($data);
 </head>
 <body>
 <h1 align="center">第<?php echo $id;?>則投影</h1><br>
-<button onclick="location.href = 'edit_homepage.php';">回管理首頁</button><br>
+<button onclick="location.href = 'edit_homepage.php';">回管理首頁板</button><br>
 <table align="center" width="60%" border="1">
 	<tr>
 		<td width="20%"><?php echo "投影片id：$rs[slide_id]";?></td>

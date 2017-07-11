@@ -23,6 +23,6 @@
 	docs/examples/carousel/test_home.php(首頁)(投影片已換成php讀取資料庫的寫法)(2017-7-10)
 	docs/examples/signin/signin.php(管理者登錄管理頁面)(2017-7-10)
 	docs/examples/carousel/admin.php(管理者首頁)(2017-7-11)
-	docs/examples/carousel/edit_homepage.php(管理者管理首頁頁面)(2017-7-11)
+	docs/examples/carousel/edit_homepage.php(管理者管理首頁頁面)(含多則首頁刪除)(2017-7-11)
 	docs/examples/carousel/delete.php(管理者刪除首頁頁面)(2017-7-11)
 	docs/examples/carousel/post.php(管理者新增首頁頁面)(2017-7-11)
