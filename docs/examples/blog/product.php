@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	header ("content-type:text/html;charset=utf-8");
+	$db_link=mysqli_connect("localhost","root","benefit0703");
+	if(!$db_link){
+		echo"資料連結失敗";
+	}
+	else{
+		echo"資料連結成功";
+	}
+?>
+	
+<!DOCTYPE html>
 <html lang="zh-hant">
   <head>
     <meta http-equiv="content-type" content="text/html";charset="utf-8">
@@ -37,7 +48,7 @@
           <a class="blog-nav-item" href="product.php">產品簡介</a>
           <a class="blog-nav-item" href="#">聯絡方式</a>
 		  <a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a>
-		  <a class="blog-nav-item" href="../signin/comment_signin_withbrowse.php">管理留言板</a>
+		  <a class="blog-nav-item" href="../signin/comment_signin_withbrowse.php">管理者模式</a>
         </nav>
       </div>
     </div>
