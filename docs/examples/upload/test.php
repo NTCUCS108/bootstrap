@@ -1,5 +1,6 @@
 <pre class="codeblock prettyprint">
 <?php
+session_start();
 $type=$_FILES["file"]["type"];//找name為file裡面的東西
 $size=$_FILES["file"]["size"];
 $name=$_FILES["file"]["name"];//網頁讀的中文(UTF-8)
@@ -32,7 +33,7 @@ else
 			$savename=iconv("UTF-8","BIG-5",$name);//將網頁用中文(UTF-8)轉為電腦用中文(BIG-5)以利存檔
 			move_uploaded_file($tmp_name,"../carousel/img/".$savename.".".$filename[1]);//搬移至想要的資料夾
 			echo "上傳成功";
-			echo "<br><font size='7'>位置：img/$savename.$filename[1]</font>";
+			$_SESSION['img_src'] = "img/$savename.$filename[1]";
 		}
 		else
 			echo "檔案必須小於10MB";
