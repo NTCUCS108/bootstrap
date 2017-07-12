@@ -58,7 +58,6 @@ include("connect.php");
 				<li><a href="../blog/product.php">產品簡介</a></li>
                 <li><a href="#contact">連絡方式</a></li>
 				<li><a href="../comment_withbrowse/comment_browse.php">留言板</a></li>
-				<li><a href="../signin/signin.php">管理者模式</a></li>
                 <!--<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
