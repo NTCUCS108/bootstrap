@@ -18,6 +18,7 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <h1 align="center">第<?php echo $id;?>則留言</h1><br>

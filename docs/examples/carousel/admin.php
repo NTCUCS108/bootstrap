@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <button onclick="location.href='../comment_withbrowse/comment_admin_browse.php'">管理留言</button>

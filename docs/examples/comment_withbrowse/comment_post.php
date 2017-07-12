@@ -1,17 +1,24 @@
 <?php
 include("comment_connect.php");
-$guestName=$_POST["guestName"];
-$guestEmail=$_POST["guestEmail"];
-$guestGender=$_POST["guestGender"];
-$guestSubject=$_POST["guestSubject"];
-$guestContentType=$_POST["guestContentType"];
-$guestContent=$_POST["guestContent"];
+if($_POST['guestName']!='')
+	$guestName=$_POST["guestName"];
+if($_POST['guestEmail']!='')
+	$guestEmail=$_POST["guestEmail"];
+if($_POST['guestGender']!='')
+	$guestGender=$_POST["guestGender"];
+if($_POST['guestSubject']!='')
+	$guestSubject=$_POST["guestSubject"];
+if($_POST['guestContentType']!='')
+	$guestContentType=$_POST["guestContentType"];
+if($_POST['guestContent']!='')
+	$guestContent=$_POST["guestContent"];
 $time=date("Y/m/d G:i:s");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 新增留言
@@ -33,7 +40,7 @@ $time=date("Y/m/d G:i:s");
 <?php
 if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($guestSubject) and isset($guestContent))
 {
-	mysql_query("Insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','','')");
+	mysql_query("insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','','')");
 	header("location:comment_browse.php");
 }	
 else

@@ -33,6 +33,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <h1 align="center">留言板</h1><br>

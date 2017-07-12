@@ -28,6 +28,7 @@ $data=mysql_query("select * from slide order by slide_id");
 
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <h1 align='center'>管理首頁板</h1><br>

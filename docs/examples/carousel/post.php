@@ -32,6 +32,7 @@ if($_POST['link_src']!='')
 
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <?php include("../upload/upload_homepage_pic.php");?>

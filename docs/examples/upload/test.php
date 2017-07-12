@@ -7,6 +7,9 @@ $tmp_name=$_FILES["file"]["tmp_name"];
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8" />
+</head>
 <body>
 <?php
 define("MAX_UPLOAD",10);

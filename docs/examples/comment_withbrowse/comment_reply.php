@@ -21,6 +21,7 @@ if(isset($guestReply))
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <h1 align="center">回覆頁面</h1>

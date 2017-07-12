@@ -52,6 +52,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <h1 align="center">管理留言板</h1>

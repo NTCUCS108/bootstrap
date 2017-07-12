@@ -21,6 +21,7 @@ header("location:edit_homepage.php");
 
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <?php ?>

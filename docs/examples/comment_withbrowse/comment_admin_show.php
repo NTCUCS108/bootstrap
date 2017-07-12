@@ -15,6 +15,7 @@ $rs = mysql_fetch_assoc($data);
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <h1 align="center">第<?php echo $id;?>則留言</h1><br>

@@ -14,6 +14,7 @@ $rs=mysql_fetch_assoc($data);
 
 <html>
 <head>
+<meta charset="UTF-8" />
 </head>
 <body>
 <h1 align="center">第<?php echo $id;?>則投影</h1><br>
