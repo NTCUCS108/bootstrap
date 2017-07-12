@@ -91,7 +91,7 @@ include("connect.php");
 		{
 			$rs=mysql_fetch_assoc($data);
 	  ?>
-        <li data-target="#myCarousel" data-slide-to="<?php echo "$rs[slide_id]";?>" <?php if($rs[slide_id]==0) echo 'class="active";'?>></li><!--或許可以改成php寫法？讀取資料庫-->
+        <li data-target="#myCarousel" data-slide-to="<?php echo "$rs[slide_id]";?>" <?php if($rs[slide_id]==0) echo 'class="active";'?>></li>
 	<?php
 	}
 	?>
@@ -104,7 +104,7 @@ include("connect.php");
 			$rs = mysql_fetch_assoc($data);
 	  ?>
         <div class="item<?php if($rs["slide_id"]==0) echo ' active';?>">
-          <img src="<?php echo "$rs[img_src]";?>" alt="<?php echo "$rs[alt]";?>" style='max-width:500px;max-height:300px;'>
+          <img src="<?php $img_src = explode("img/","$rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="<?php echo "$rs[alt]";?>" style='max-width:500px;max-height:300px;'>
           <div class="container">
             <div class="carousel-caption">
               <h1><?php echo "$rs[headers]";?></h1>

@@ -49,7 +49,7 @@ if($_GET['use_origin_pic']=="true")
 	$_SESSION['img_src'] = $rs['img_src'];
 if(isset($headers) and isset($description) and isset($icon) and isset($link_src) and isset($_SESSION['img_src']))
 {
-	if($_GET['use_origin_pic']!="true")
+	if(isset($rs) and $_GET['use_origin_pic']!="true")
 		unlink($rs['img_src']);
 	if(isset($_GET['id']))
 	{
