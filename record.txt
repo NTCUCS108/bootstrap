@@ -1,28 +1,21 @@
 未開始：
-	是否需要session cookie(例reply.delete後會跳回comment_admin_browse，不親近)
+	是否需要session cookie(例reply.delete後會跳回MessageBoard，不親近)
 	上下則留言
 	fb式留言(動態資料庫?)
 執行中：
 	docs/examples/blog/index.html(產品介紹子頁)
 已完成：
-	直接顯示：
-		docs/examples/comment/comment_show.php(顯示所有留言)(2017-7-6)
-		docs/examples/comment/comment_post.php(撰寫留言)(2017-7-6)
-		docs/examples/signin/comment_signin.php(管理者登錄管理留言頁面)(2017-7-6)
-		docs/examples/comment/comment_admin.php(管理者瀏覽留言頁面)(2017-7-6)
-		docs/examples/comment/comment_reply.php(管理者回覆留言頁面)(2017-7-6)
-		docs/examples/comment/comment_delete.php(管理者刪除留言頁面)(2017-7-6)
-	只顯示subject詳細內容需點入：
-		docs/examples/comment_withbrowse/comment_browse.php(顯示多項概略留言)(2017-7-7)(含留言分類、留言瀏覽人數、留言排序)(2017-7-10)
-		docs/examples/comment_withbrowse/comment_show.php(顯示單項詳細留言)(2017-7-7)
-		docs/examples/comment_withbrowse/comment_post.php(撰寫留言)(2017-7-7)
-		docs/examples/comment_withbrowse/comment_admin_browse.php(管理者瀏覽多項概略留言頁面)(2017-7-7)(含留言分類、管理者多則留言刪除、留言瀏覽人數、留言排序)(2017-7-10)
-		docs/examples/comment_withbrowse/comment_admin_show.php(管理者瀏覽單項詳細留言頁面)(2017-7-7)
-		docs/examples/comment_withbrowse/comment_reply.php(管理者回覆留言頁面)(2017-7-7)
-		docs/examples/comment_withbrowse/comment_delete.php(管理者刪除留言頁面)(2017-7-7)
+	docs/examples/comment_withbrowse/comment_browse.php(顯示多項概略留言)(2017-7-7)(含留言分類、留言瀏覽人數、留言排序)(2017-7-10)
+	docs/examples/comment_withbrowse/comment_show.php(顯示單項詳細留言)(2017-7-7)
+	docs/examples/comment_withbrowse/comment_post.php(撰寫留言)(2017-7-7)
 	docs/examples/carousel/test_home.php(首頁)(投影片已換成php讀取資料庫的寫法)(2017-7-10)
-	docs/examples/signin/signin.php(管理者登錄管理頁面)(2017-7-10)
-	docs/examples/carousel/admin.php(管理者首頁)(2017-7-11)
-	docs/examples/carousel/edit_homepage.php(管理者管理首頁頁面)(含多則首頁刪除)(2017-7-11)
-	docs/examples/carousel/delete.php(管理者刪除首頁頁面)(2017-7-11)
-	docs/examples/carousel/post.php(管理者新增首頁頁面)(2017-7-11)
+	docs/examples/comment_withbrowse/comment_admin_browse.php(管理者瀏覽多項概略留言頁面)(2017-7-7)(含留言分類、管理者多則留言刪除、留言瀏覽人數、留言排序)(2017-7-10)->backstage-AdminLTE(2017-7-12)
+	docs/examples/comment_withbrowse/comment_admin_show.php(管理者瀏覽單項詳細留言頁面)(2017-7-7)->backstage-AdminLTE(2017-7-12)
+	docs/examples/comment_withbrowse/comment_reply.php(管理者回覆留言頁面)(2017-7-7)->backstage-AdminLTE(2017-7-12)
+	docs/examples/comment_withbrowse/comment_delete.php(管理者刪除留言頁面)(2017-7-7)->backstage-AdminLTE(2017-7-12)
+	docs/examples/signin/signin.php(管理者登錄管理頁面)(2017-7-10)->backstage-AdminLTE(2017-7-12)
+	docs/examples/carousel/admin.php(管理者首頁)(2017-7-11)->backstage-AdminLTE(2017-7-12)
+	docs/examples/carousel/edit_homepage.php(管理者管理首頁頁面)(含多則首頁刪除)(2017-7-11)->backstage-AdminLTE(2017-7-12)
+	docs/examples/carousel/delete.php(管理者刪除首頁頁面)(2017-7-11)->backstage-AdminLTE(2017-7-12)
+	docs/examples/carousel/post.php(管理者新增首頁頁面)(2017-7-11)->backstage-AdminLTE(2017-7-12)
+		
