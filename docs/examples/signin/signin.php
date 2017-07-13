@@ -1,5 +1,22 @@
 <?php
 session_start();
+if(isset($_POST["account"]) and isset($_POST["password"]))
+{
+include("connect.php");
+$account = $_POST["account"];
+$password = $_POST["password"];
+$data = mysql_query("select * from admin where account = '$account' and password = '$password'");
+	if(mysql_num_rows($data)>=1)
+	{
+		$_SESSION['login']="yes";
+		header("location:../../../../backstage-AdminLTE local/starter.php");
+	}
+	else
+		echo "<p align='center'>查無此人</p>";
+}
+?>
+<?php
+
 if($_SESSION["login"]=="yes")
 	header("location:../../../../backstage-AdminLTE/starter.php");
 ?>
@@ -53,22 +70,7 @@ if($_SESSION["login"]=="yes")
 
     </div> <!-- /container -->
 <!--驗證admin帳號-->
-<?php
-if(isset($_POST["account"]) and isset($_POST["password"]))
-{
-include("connect.php");
-$account = $_POST["account"];
-$password = $_POST["password"];
-$data = mysql_query("select * from admin where account = '$account' and password = '$password'");
-	if(mysql_num_rows($data)>=1)
-	{
-		$_SESSION['login']="yes";
-		header("location:../../../../backstage-AdminLTE local/starter.php");
-	}
-	else
-		echo "<p align='center'>查無此人</p>";
-}
-?>
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
