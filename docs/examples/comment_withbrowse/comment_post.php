@@ -14,7 +14,15 @@ if($_POST['guestContent']!='')
 	$guestContent=$_POST["guestContent"];
 $time=date("Y/m/d G:i:s");
 ?>
-
+<?php
+if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($guestSubject) and isset($guestContent))
+{
+	mysql_query("insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','','')");
+	header("Location: comment_browse.php");
+}	
+else
+	echo "尚未輸入完成";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +45,6 @@ $time=date("Y/m/d G:i:s");
 	<input type="submit" value="送出">
 </form>
 <!--將留言寫到資料庫-->
-<?php
-if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($guestSubject) and isset($guestContent))
-{
-	mysql_query("insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','','')");
-	header("location:comment_browse.php");
-}	
-else
-	echo "尚未輸入完成";
-?>
+
 </body>
 </html>
