@@ -20,8 +20,6 @@ if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($g
 	mysql_query("insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','','')");
 	header("Location: comment_browse.php");
 }	
-else
-	echo "尚未輸入完成";
 ?>
 <!DOCTYPE html>
 <html>
