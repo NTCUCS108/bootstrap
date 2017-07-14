@@ -1,12 +1,17 @@
 ﻿<?php
 	header ("content-type:text/html;charset=utf-8");
-	$db_link=mysqli_connect("localhost","root","benefit0703");
-	if(!$db_link){
-		echo"資料連結失敗";
-	}
-	else{
-		echo"資料連結成功";
-	}
+	mysql_connect("localhost","root","admin");
+	mysql_select_db("company"); //選擇資料庫
+	mysql_query("set names utf8"); //以utf-8讀取資料，讓資料可以讀取中文
+	$data=mysql_query("select * from product"); 
+	//if(!$db_link){
+	//	echo"資料連結失敗";
+
+	//}
+	//else{
+	//	echo"資料連結成功";
+		
+	//}
 ?>
 	
 <!DOCTYPE html>
@@ -44,26 +49,25 @@
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="#">精德實業股份有限公司</a>
           <a class="blog-nav-item" href="../carousel/test_home.php">首頁</a>
-          <a class="blog-nav-item" href="#">公司簡介</a>
-          <a class="blog-nav-item" href="product.php">產品簡介</a>
-          <a class="blog-nav-item" href="#">聯絡方式</a>
+          <a class="blog-nav-item" href="company.php">公司簡介</a>
+          <a class="blog-nav-item" href="product.php">產品資訊</a>
+          <a class="blog-nav-item" href="contact.php">聯絡方式</a>
 		  <a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a>
-		  <a class="blog-nav-item" href="../signin/comment_signin_withbrowse.php">管理者模式</a>
         </nav>
       </div>
     </div>
 
     <div class="container">
-
-    <div class="blog-header">
+	
+    <!--<div class="blog-header">
 		<h2 class="blog-title"><strong>產品介紹</strong></h2>
 		<p class="lead blog-description">Introduction of our products.</p>
 		<p class="blog-post-meta">July, 2017</p>
-	</div>
+	</div>-->
 
     <div class="row">
-
-    <div class="col-sm-8 blog-main">
+	<?php $rs=mysql_fetch_row($data);echo "$rs[0]";?>
+    <!--<div class="col-sm-8 blog-main">
 
         <div class="blog-post" id="JD-SP001">
         <h3 class="blog-post-title">JD-SP001自充電太陽能模組</h3>
@@ -129,7 +133,7 @@
 
 	</table>
           </div>
-			<!-- /.blog-post -->
+			<!-- /.blog-post 
 			
 		  <div class="blog-post" id="GDTILT6S">
 		<h3 class="blog-post-title">GDTILT6S無線傾度盤</h3>
@@ -796,11 +800,11 @@
               <li><a href="#">Previous</a></li>
               <li><a href="#">Next</a></li>
             </ul>
-        </nav>
+        </nav>-->
 
-    </div><!-- /.blog-main -->
+    <!--</div><!-- /.blog-main--> 
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+       <!-- <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           
 		  <div class="sidebar-module-inset">
 			<h4>Elsewhere</h4>
