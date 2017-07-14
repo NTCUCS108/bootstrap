@@ -49,11 +49,16 @@
       </div>
     </div>
 	 
-	<p>
+	
+	<p><p>
+	<div class="container">
+	<div class="row">
 	<?php 
 	$rs=mysql_fetch_row($data);
 	echo "$rs[0]";
 	?>
+	</div>
+    </div>
 	
 	</body>
 </html>

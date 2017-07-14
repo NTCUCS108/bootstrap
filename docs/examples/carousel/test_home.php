@@ -54,9 +54,9 @@ include("connect.php");
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="./test_home.php">首頁</a></li>
-                <li><a href="#company">公司簡介</a></li>
+                <li><a href="../blog/company.php">公司簡介</a></li>
 				<li><a href="../blog/product.php">產品資訊</a></li>
-                <li><a href="#contact">連絡方式</a></li>
+                <li><a href="../blog/contact.php">連絡方式</a></li>
 				<li><a href="../comment_withbrowse/comment_browse.php">留言板</a></li>
                 <!--<li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>

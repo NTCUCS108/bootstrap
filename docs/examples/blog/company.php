@@ -49,7 +49,7 @@
       </div>
     </div>
 	
-	<p><p><p></p></p></p>
+	<p><p>
 	<div class="container">
 	<div class="row">
 	<?php 
