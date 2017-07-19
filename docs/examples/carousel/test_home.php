@@ -85,7 +85,7 @@ include("connect.php");
       <!-- Indicators -->
       <ol class="carousel-indicators">
 	  <?php
-		$data = mysql_query("select * from slide order by slide_id");
+		$data = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
 		for($i=1;$i<=mysql_num_rows($data);$i++)
 		{
 			$rs=mysql_fetch_assoc($data);
@@ -97,7 +97,7 @@ include("connect.php");
       </ol>
       <div class="carousel-inner" role="listbox">
 	  <?php
-		$data = mysql_query("select * from slide order by slide_id");
+		$data = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
 		for($i=1;$i<=mysql_num_rows($data);$i++)
 		{
 			$rs = mysql_fetch_assoc($data);
