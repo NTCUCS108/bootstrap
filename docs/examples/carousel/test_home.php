@@ -15,6 +15,7 @@ include("connect.php");
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/blog.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -77,7 +78,18 @@ include("connect.php");
 
       </div>
     </div>
-
+<div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">精德實業股份有限公司</a>
+          <a class="blog-nav-item" href="../carousel/test_home.php">首頁</a>
+          <a class="blog-nav-item" href="../blog/product.php">公司簡介</a>
+          <a class="blog-nav-item" href="product.php">產品簡介</a>
+          <a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a>
+		  <a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a>
+        </nav>
+      </div>
+</div>
 
     <!-- Carousel
     ================================================== -->
