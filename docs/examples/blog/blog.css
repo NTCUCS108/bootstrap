@@ -6,6 +6,7 @@ body {
   font-family: Calibri,"微軟正黑體",Arial,Georgia, "Times New Roman", Times, serif;
   color: #444;
   padding-bottom: 40px;
+  background-color:#e3e3e3;
 }
 
 h1, .h1,
@@ -53,7 +54,7 @@ h6, .h6 {
   display: inline-block;
   padding: 15px;
   font-weight: 500;
-  color: #777;
+  color: #fff;
 }
 .blog-nav-item:hover,
 .blog-nav-item:focus {
@@ -63,7 +64,7 @@ h6, .h6 {
 
 /* Active state gets a caret at the bottom */
 .blog-nav .active {
-  color: #777;
+  color: #fff;
   font-size: 18px;
 }
 .blog-nav .active:after {
@@ -193,7 +194,7 @@ h6, .h6 {
   padding: 40px 0;
   color: #999;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #e3e3e3;
   border-top: 1px solid #cecece;
 }
 .blog-footer p:last-child {
