@@ -48,7 +48,7 @@ include("connect.php");
           <a class="blog-nav-item" href="../carousel/test_home.php">首頁</a>
 
           <a class="blog-nav-item" href="../blog/company.php">公司簡介</a>
-          <a class="blog-nav-item" href="product.php">產品簡介</a>
+          <a class="blog-nav-item" href="product.php">產品資訊</a>
 
           <a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a>
 		  <a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a>
