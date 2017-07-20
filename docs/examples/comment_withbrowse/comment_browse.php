@@ -15,6 +15,10 @@ session_start();
 </head>
 
 <body>
+<?php 
+include("page_connect.php");
+$page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' order by post_id");
+?>
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
@@ -25,9 +29,7 @@ session_start();
           <li><a class="blog-nav-item" href="../blog/product.php">產品資訊</a></li>
           <li><a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a></li>
 		  <li><a class="blog-nav-item" href="comment_browse.php">留言板</a></li>
-		  <?php include("page_connect.php");
-				$page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' order by post_id");
-				if(mysql_num_rows($page)>0) {?>
+		  <?php if(mysql_num_rows($page)>0) {?>
 		  <li class="dropdown"><a class="dropdown-toggle blog-nav-item" data-toggle="dropdown" href="#">更多<span class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<?php for($i=1;$i<=mysql_num_rows($page);$i++) {

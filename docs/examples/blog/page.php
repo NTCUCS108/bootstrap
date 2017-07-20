@@ -47,7 +47,7 @@
 			<ul class="dropdown-menu">
 				<?php for($i=1;$i<=mysql_num_rows($page);$i++) {
 					$rs = mysql_fetch_assoc($page);?>
-				<li><a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a></li>
+				<li><a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a></li>
 				<?php }?>
 			</ul>
 		  </li>
