@@ -49,15 +49,24 @@
       </div>
     </div>
 	
-	<p><p>
+	<br><br><br>
 	<div class="container">
 	<div class="row">
+  <div class="col-md-10">
+    <div class="box">
+      <div class="box-header">
+      </div>
+    <div class="box-body" >
 	<?php 
 	$rs=mysql_fetch_row($data);
 	echo "$rs[0]";
 	?>
-	</div>
-	</div>
+	  </div>
 	
+    </div>
+  </div>
+  </div>
+  </div>
+
 	</body>
 </html>
