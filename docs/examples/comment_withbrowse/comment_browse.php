@@ -16,7 +16,7 @@ session_start();
 
 <body>
 <?php 
-include("page_connect.php");
+include("../blog/page_connect.php");
 $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' order by post_id");
 ?>
 <div class="blog-masthead">
@@ -165,5 +165,13 @@ else
 	</div>
 	</div>
 </section>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
