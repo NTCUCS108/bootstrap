@@ -16,9 +16,7 @@ include("connect.php");
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/blog.css" rel="stylesheet">
-
 	<!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
@@ -47,7 +45,7 @@ include("connect.php");
           <a class="blog-nav-item active" href="test_home.php">精德實業股份有限公司</a>
           <a class="blog-nav-item" href="test_home.php">首頁</a>
           <a class="blog-nav-item" href="../blog/company.php">公司簡介</a>
-          <a class="blog-nav-item" href="product.php">產品資訊</a>
+          <a class="blog-nav-item" href="../blog/product.php">產品資訊</a>
           <a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a>
 		  <a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a>
         </nav>
@@ -183,7 +181,7 @@ include("connect.php");
 		//2017-7-6已處理，session_start()需在顯示網頁前執行
 	  ?><br>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!-- /.container -->

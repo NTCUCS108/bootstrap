@@ -1,4 +1,4 @@
-/* GLOBAL STYLES
+﻿/* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
@@ -53,7 +53,7 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;/*背景大小*/
-  background-color: #777;
+  background-color: #CAE0E6;
 }
 .carousel-inner > .item > img {
   margin: auto;/*圖片置中*/
