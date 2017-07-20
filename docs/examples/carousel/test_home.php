@@ -17,23 +17,12 @@ include("connect.php");
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/blog.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-	
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
-    <!-- Custom styles for this template -->
     <link href="test_home.css" rel="stylesheet">
-	<link href="../navbar-static-top/navbar-static-top.css" rel="stylesheet"><!--為什麼沒用???-->
-  </head>
-<!-- NAVBAR
-================================================== -->
+	
+	</head>
   <body>
   <?php
 	session_start();//2017-7-6修復browse_count_pic
