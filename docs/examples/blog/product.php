@@ -1,9 +1,6 @@
 ﻿<?php
 	header ("content-type:text/html;charset=utf-8");
-	mysql_connect("localhost","root","admin");
-	mysql_select_db("company"); //選擇資料庫
-	mysql_query("set names utf8"); //以utf-8讀取資料，讓資料可以讀取中文
-	$data=mysql_query("select * from product"); 
+	
 ?>
 	
 <!DOCTYPE html>
@@ -31,13 +28,15 @@
       <div class="container">
         <nav class="blog-nav">
           <ul class="nav navbar-nav">
-          <li><a class="blog-nav-item active" href="test_home.php">精德實業股份有限公司</a></li>
-          <li><a class="blog-nav-item" href="test_home.php">首頁</a></li>
-          <li><a class="blog-nav-item" href="../blog/company.php">公司簡介</a></li>
-          <li><a class="blog-nav-item" href="../blog/product.php">產品資訊</a></li>
-          <li><a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a></li>
+          <li><a class="blog-nav-item active" href="../carousel/test_home.php">精德實業股份有限公司</a></li>
+          <li><a class="blog-nav-item" href="../carousel/test_home.php">首頁</a></li>
+          <li><a class="blog-nav-item" href="company.php">公司簡介</a></li>
+          <li><a class="blog-nav-item" href="product.php">產品資訊</a></li>
+          <li><a class="blog-nav-item" href="contact.php">聯絡方式</a></li>
 		  <li><a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a></li>
-		  <?php if(mysql_num_rows($page)>0) {?>
+		  <?php include("page_connect.php");
+				$page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' order by post_id");
+				if(mysql_num_rows($page)>0) {?>
 		  <li class="dropdown"><a class="dropdown-toggle blog-nav-item" data-toggle="dropdown" href="#">更多<span class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<?php for($i=1;$i<=mysql_num_rows($page);$i++) {
@@ -51,7 +50,13 @@
         </nav>
       </div>
     </div>
-
+<?php 
+mysql_close();
+mysql_connect("localhost","root","admin");
+	mysql_select_db("company"); //選擇資料庫
+	mysql_query("set names utf8"); //以utf-8讀取資料，讓資料可以讀取中文
+	$data=mysql_query("select * from product"); 
+?>
     <div class="container">	
 		<div class="row">
 			<?php $rs=mysql_fetch_row($data);echo "$rs[1]";?>
