@@ -31,7 +31,10 @@
     </head>
 
   <body>
-
+<?php 
+include("page_connect.php");
+$page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' order by post_id");
+?>
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
