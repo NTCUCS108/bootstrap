@@ -52,8 +52,6 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 <div class="row">
 <p align="center">
 <button class="btn btn-primary" onclick="location.href = 'comment_browse.php';">回留言板</button>
-<button class="btn btn-success" onclick="location.href = '#';">下一則</button>
-<button class="btn btn-warning" onclick="location.href = '#';">上一則</button>
 </p>
 </div>
 <br>
