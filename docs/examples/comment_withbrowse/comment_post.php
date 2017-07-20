@@ -10,7 +10,7 @@ if($_POST['guestSubject']!='')
 	$guestSubject=$_POST["guestSubject"];
 if($_POST['guestContent']!='')
 	$guestContent=$_POST["guestContent"];
-$time=date("Y/m/d G:i:s");
+$createtime=date("Y/m/d G:i:s");
 $guestContentType=$_POST["guestContentType"];
 ?>
 <?php
@@ -20,7 +20,7 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
 	if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($guestSubject) and isset($guestContent))
 	{
 		$check = 1;
-		mysql_query("Insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$time','$guestContentType','$guestContent','','','','0')");
+		mysql_query("Insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$createtime','$guestContentType','$guestContent','','','0','0')");
 		header("location:comment_browse.php");
 	}
 }	
