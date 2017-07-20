@@ -53,7 +53,7 @@ h6, .h6 {
   display: inline-block;
   padding: 15px;
   font-weight: 500;
-  color: #ffffff;
+  color: #777;
 }
 .blog-nav-item:hover,
 .blog-nav-item:focus {
@@ -63,7 +63,7 @@ h6, .h6 {
 
 /* Active state gets a caret at the bottom */
 .blog-nav .active {
-  color: #ffffff;
+  color: #777;
   font-size: 18px;
 }
 .blog-nav .active:after {
@@ -115,7 +115,7 @@ h6, .h6 {
   letter-spacing: 3px;
 } 
 .blog-table>.td{
-	background-color:#ffdab9;
+	background-color:#555;
 }
 .td{ 
   background-color:#ffdab9;
@@ -138,13 +138,13 @@ h6, .h6 {
   padding: 10px;
   margin:0 10px 10px 10px;
   position: fixed;
-  background-color: #ffdab9;
+  background-color: #777;
   border-radius: 8px;
 }
 .sidebar-module-inset {
   padding: 15px;
   margin:-150px 10px;
-  background-color: #c6d3fe;
+  background-color: #777;
   border-radius: 8px;
   position: absolute;
 }
