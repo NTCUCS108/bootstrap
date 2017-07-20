@@ -38,46 +38,7 @@ include("connect.php");
   <?php
 	session_start();//2017-7-6修復browse_count_pic
   ?>
-    <div class="navbar-wrapper"><!--使navbar往下-->
-      <div class="container">
-
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation"><!--為什麼不能用static???-->
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">精德實業股份有限公司</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="./test_home.php">首頁</a></li>
-                <li><a href="../blog/company.php">公司簡介</a></li>
-				<li><a href="../blog/product.php">產品資訊</a></li>
-                <li><a href="../blog/contact.php">連絡方式</a></li>
-				<li><a href="../comment_withbrowse/comment_browse.php">留言板</a></li>
-                <!--<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>-->
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-      </div>
-    </div>
+   
 <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
