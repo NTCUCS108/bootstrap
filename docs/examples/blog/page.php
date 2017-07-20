@@ -1,11 +1,16 @@
 ﻿<?php
-	header ("content-type:text/html;charset=utf-8");
-	mysql_connect("localhost","root","admin");
-	mysql_select_db("company"); //選擇資料庫
-	mysql_query("set names utf8"); //以utf-8讀取資料，讓資料可以讀取中文
-	$data=mysql_query("select * from connectways"); 	
+	include("page_connect.php");
+	$check = mysql_query("select * from page where post_id = '$_GET[id]' and dead_time = '0000-00-00 00:00:00'");
+	if(mysql_num_rows($check)==0)
+	{
+		echo '<script type="text/javascript">
+           window.location = "http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/carousel/test_home.php"
+			</script>';
+	}
+	$c_rs = mysql_fetch_assoc($check);
+	$data = mysql_query("select * from page_data where name = '$c_rs[name]'");
+	$d_rs = mysql_fetch_assoc($data);
 ?>
-
 <!DOCTYPE html>
 <html lang="zh-hant">
   <head>
@@ -17,21 +22,12 @@
 
     <title>精德實業股份有限公司</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
     <link href="blog.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     </head>
 
   <body>
@@ -39,7 +35,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <ul class="nav navbar-nav">
+         <ul class="nav navbar-nav">
           <li><a class="blog-nav-item active" href="test_home.php">精德實業股份有限公司</a></li>
           <li><a class="blog-nav-item" href="test_home.php">首頁</a></li>
           <li><a class="blog-nav-item" href="../blog/company.php">公司簡介</a></li>
@@ -60,25 +56,39 @@
         </nav>
       </div>
     </div>
-	 
-	
+
+
 	<br><br><br>
-  <div class="container">
-  <div class="row">
-  <div class="col-md-10">
-    <div class="box">
-      <div class="box-header">
-      </div>
-      <div class="box-body" >
-	<?php 
-	$rs=mysql_fetch_row($data);
-	echo "$rs[0]";
-	?>
-      </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="box">
+					<div class="box-header">
+					</div>
+					<div class="box-body" >
+					<?php 
+							echo "$d_rs[content]";
+					?>
+					</div>
+				</div>
+			</div>
+		</div>
   </div>
-  </div>
-  </div>
-	
-	</body>
+
+    <footer class="blog-footer">      
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
