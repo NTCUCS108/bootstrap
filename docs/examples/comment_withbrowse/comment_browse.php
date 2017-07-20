@@ -80,7 +80,7 @@ else
 			<div class="box-header">
 	
 				<div class="row">
-				<div class="col-md-4">
+					<h1 align="center">留言板</h1><br>
 					<form name="search" method="get">
 						<p><font size="4">查看留言板</font></p>
 						<font size="2">搜尋類別：</font>
@@ -122,14 +122,12 @@ else
 						<br>
 						<input type="submit" class="btn btn-primary" value="送出">
 					</form>
-				</div>
+									<button type="button" class="btn btn-warning pull-right" onclick="location.href = './comment_post.php';" >我要留言</button>
 				</div>
 			</div>
 <br><br>
 			<div class="box-body">
-				<h1 align="center">留言板</h1><br>
-				<button type="button" class="btn btn-warning pull-right" onclick="location.href = './comment_post.php';" >我要留言</button>
-				<br>
+				
 				<?php
 				for($i=1;$i<=mysql_num_rows($data);$i++){
 				$rs = mysql_fetch_assoc($data);//顯示資料
