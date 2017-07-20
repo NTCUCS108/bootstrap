@@ -19,14 +19,45 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 <html>
 <head>
 <meta charset="UTF-8" />
+<title>精德實業股份有限公司</title>
+<link rel="icon" href="../../favicon.ico">
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../blog/blog.css" rel="stylesheet">
+
 </head>
+
 <body>
-<h1 align="center">第<?php echo $id;?>則留言</h1><br>
-<button onclick="location.href = 'comment_browse.php';">回留言板</button>
-<button onclick="location.href = '#';">上一則</button>
-<button onclick="location.href = '#';">下一則</button>
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">精德實業股份有限公司</a>
+          <a class="blog-nav-item" href="../carousel/test_home.php">首頁</a>
+          <a class="blog-nav-item" href="../blog/company.php">公司簡介</a>
+          <a class="blog-nav-item" href="../blog/product.php">產品資訊</a>
+          <a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a>
+		  <a class="blog-nav-item" href="comment_browse.php">留言板</a>
+        </nav>
+    </div>
+</div>
+
+<br><br><br>
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<div class="box">
+<div class="box-header">
+<h1 align="center">第<?php echo $id;?>則留言</h1>
 <br>
-<table align="center" width="60%" border="1">
+</div>
+<div class="box-body">
+<div class="row">
+<p align="center">
+<button class="btn btn-primary" onclick="location.href = 'comment_browse.php';">回留言板</button>
+<button class="btn btn-success" onclick="location.href = '#';">下一則</button>
+<button class="btn btn-warning" onclick="location.href = '#';">上一則</button>
+</p>
+</div>
+<br>
+<table align="center" width="60%" border="1" class="table table-bordered">
 	<tr>
 		<td width="20%"><?php echo "主旨："?></td>
 		<td width="80%"><?php echo $rs[guestSubject]?></td><!--用$rs["guestSubject"]無法顯示-->
@@ -72,6 +103,9 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
             </tr>
     <?php } ?>
 </table>
-<br>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
