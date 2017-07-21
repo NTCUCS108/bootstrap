@@ -90,9 +90,13 @@ else
 						<span class="fa fa-caret-down"></span>
 						<ul class="dropdown-menu">
 						<?php
+							$type = mysql_query("select * from guestcontenttype where live = 1 order by post_id");
 							echo '<option value="不限"';if($search=="不限") echo ' selected';echo '>不限</option>';
-							echo '<option value="產品"';if($search=="產品") echo ' selected';echo '>產品</option>';
-							echo '<option value="實績"';if($search=="實績") echo ' selected';echo '>實績</option>';
+							for($i=1;$i<=mysql_num_rows($type);$i++)
+							{
+								$t_rs = mysql_fetch_assoc($type);
+								echo "<option value=$t_rs[name]";if($guestContentType=="$t_rs[name]") echo ' selected';echo ">$t_rs[name]</option>";
+							}
 							echo '<option value="其他"';if($search=="其他") echo ' selected';echo '>其他</option>';
 						?>
 						</ul>
@@ -136,10 +140,10 @@ else
 				?>
 				<table align="center" width="60%" border="1" class="table table-bordered">
 					<tr>
-						<td width="10%"><?php echo "ID：$rs[guestID]"?></td>
-						<td width="15%"><?php echo "類型：$rs[guestContentType]"?></td>
-						<td width="65%"><?php echo "主旨：<a href='comment_show.php?id=$rs[guestID]'>$rs[guestSubject]</a>"?></td>
-						<td width="5%"><?php echo $rs[browse_count]?></td>
+						<td width="10%"><?php echo "ID：$rs[guestID]";?></td>
+						<td width="15%"><?php echo "類型：$rs[guestContentType]";?></td>
+						<td width="65%"><?php echo "主旨：<a href='comment_show.php?id=$rs[guestID]'>$rs[guestSubject]</a>";?></td>
+						<td width="5%"><?php echo "$rs[browse_count]";?></td>
 						<?php 
 							if($rs[guestReply]!="")
 								echo "<td width='5%' style='color:green;'>y</td>";

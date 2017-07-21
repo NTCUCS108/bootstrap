@@ -79,9 +79,15 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
 				留言類型：<select name="guestContentType" width="60%" border="1" type="button" class="btn btn-success 	dropdown-toggle" data-toggle="dropdown">
 						<span class="fa fa-caret-down"></span>
 						<ul class="dropdown-menu">
-						<option value="產品" <?php if($_POST['guestContentType'] == '產品') echo "selected";?>>產品</option>
-						<option value="實績" <?php if($_POST['guestContentType'] == '實績') echo "selected";?>>實績</option>
-						<option value="其他" <?php if($_POST['guestContentType'] == '其他') echo "selected";?>>其他</option>
+						<?php 
+							$type = mysql_query("select * from guestcontenttype where live = 1 order by post_id");
+							for($i=1;$i<=mysql_num_rows($type);$i++)
+							{
+								$t_rs = mysql_fetch_assoc($type);
+								echo "<option value=$t_rs[name]";if($guestContentType=="$t_rs[name]") echo ' selected';echo ">$t_rs[name]</option>";
+							}
+						?>		
+							<option value="其他" <?php if($_POST['guestContentType'] == '其他') echo "selected";?>>其他</option>
 					   </ul>
 					   </select>
 					   <br>
