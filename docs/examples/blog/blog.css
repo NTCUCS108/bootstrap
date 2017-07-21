@@ -58,7 +58,7 @@ h6, .h6 {
 }
 .blog-nav-item:hover,
 .blog-nav-item:focus {
-  color: #c6dcef;
+  color: #516779;
   text-decoration: none;
 }
 
@@ -83,7 +83,7 @@ h6, .h6 {
 
 .blog-nav .active:hover,
 .blog-nav .active:focus {
-  color: #c6dcef;
+  color: #516779;
   text-decoration: none;
 }
 
