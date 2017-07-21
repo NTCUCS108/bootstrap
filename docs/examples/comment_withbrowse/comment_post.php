@@ -4,7 +4,7 @@ if($_POST['guestName']!='')
 	$guestName=$_POST["guestName"];
 if($_POST['guestEmail']!='')
 	$guestEmail=$_POST["guestEmail"];
-if($_POST['guestGender']!='')
+if(isset($_POST['guestGender']))
 	$guestGender=$_POST["guestGender"];
 if($_POST['guestSubject']!='')
 	$guestSubject=$_POST["guestSubject"];
@@ -53,25 +53,29 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
 <div class="col-md-8 col-md-offset-2">
 <div class="box">
 	<div class="box-header">
-		<h1 align="center">新增留言</h1>
+		<h1 align="center">新增留言</h1><br>
+		<?php
+			if(!isset($check) and isset($_POST['guestName']))
+			echo "<p align='center' style='color:red;'>尚未開始輸入</p>";
+		?>
 	</div>
 	<br>
 	<div class="box-body">
 		<form  method="post" action="">
 			<div class="form-group">
 				<div class="col-md-offset-4 col-md-4">
-				    暱    稱：<input class="form-control" width="60%" border="1" type="text" name="guestName" id="guestName" value="<?php if($_POST['guestName'] != '') echo "$_POST[guestName]";?>"><br>
+				    暱    稱：<input class="form-control" width="60%" border="1" type="text" name="guestName" id="guestName" value="<?php if($_POST['guestName'] != '') echo "$_POST[guestName]";?>"><?php if(isset($check) and !isset($guestName)) echo "<p style='color:red;'>請輸入暱稱</p>";?><br>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-md-offset-4 col-md-4">
-				    信    箱：<input class="form-control" width="60%" border="1" type="email" name="guestEmail" id="guestEmail" value="<?php if($_POST['guestEmail'] != '') echo "$_POST[guestEmail]";?>"><br>
+				    信    箱：<input class="form-control" width="60%" border="1" type="email" name="guestEmail" id="guestEmail" value="<?php if($_POST['guestEmail'] != '') echo "$_POST[guestEmail]";?>"><?php if(isset($check) and !isset($guestEmail)) echo "<p style='color:red;'>請輸入信箱</p>";?><br>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-md-offset-4 col-md-4">
 				　  性 　 別：<input class="form-control" type="radio" name="guestGender" id="guestGender" value="1" <?php if($_POST['guestGender'] == '1') echo "checked=checked";?>>男
-				     <input class="form-control" type="radio" name="guestGender" id="guestGender" value="0" <?php if($_POST['guestGender'] == '0') echo "checked=checked";?>>女<br>
+				     <input class="form-control" type="radio" name="guestGender" id="guestGender" value="0" <?php if($_POST['guestGender'] == '0') echo "checked=checked";?>>女<br><?php if(isset($check) and !isset($guestGender)) echo "<p style='color:red;'>請輸入性別</p>";?>
 				</div>
 			</div>
 			<div class="form-group">
@@ -95,12 +99,12 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
 			</div>
 			<div class="form-group">
 				<div class="col-md-offset-4 col-md-4">
-				留言主旨：<input class="form-control" width="60%" border="1" type="text" name="guestSubject" id="guestSubject" value="<?php if($_POST['guestSubject'] != '') echo "$_POST[guestSubject]";?>"><br>
+				留言主旨：<input class="form-control" width="60%" border="1" type="text" name="guestSubject" id="guestSubject" value="<?php if($_POST['guestSubject'] != '') echo "$_POST[guestSubject]";?>"><?php if(isset($check) and !isset($guestSubject)) echo "<p style='color:red;'>請輸入主旨</p>";?><br>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-md-offset-4 col-md-4">
-			留言內容：<textarea class="form-control" width="60%" border="1" name="guestContent" id="guestContent" rows="5" value="<?php if($_POST['guestContent'] != '') echo "$_POST[guestContent]";?>"></textarea><br>
+			留言內容：<textarea class="form-control" width="60%" border="1" name="guestContent" id="guestContent" rows="5" value="<?php if($_POST['guestContent'] != '') echo "$_POST[guestContent]";?>"></textarea><br><?php if(isset($check) and !isset($guestContent)) echo "<p style='color:red;'>請輸入內容</p>";?>
 				</div>
 			</div>
 			<div class="form-group col-md-offset-5 col-md-2">
@@ -112,24 +116,5 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
 </div>
 </div>
 </section>
-<?php
-if(isset($check) and $check==0)
-{
-	echo "上傳失敗<br>未輸入：";
-	if(!isset($guestName))
-		echo "暱稱 ";
-	if(!isset($guestEmail))
-		echo "信箱 ";
-	if(!isset($guestGender))
-		echo "性別 ";
-	if(!isset($guestSubject))
-		echo "留言主旨 ";
-	if(!isset($guestContent))
-		echo "留言內容";
-}
-if(!isset($check) and isset($_POST['guestName']))
-	echo "尚未開始輸入";
-?>
-
 </body>
 </html>

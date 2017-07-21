@@ -42,7 +42,7 @@
           <li><a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a></li>
 		  <li><a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a></li>
 		  <?php if(mysql_num_rows($page)>0) {?>
-		  <li class="dropdown"><a class="dropdown-toggle blog-nav-item" data-toggle="dropdown" href="#">更多<span class="caret"></span></a>
+		  <li class="dropdown"><a class="dropdown-toggle blog-nav-item" data-toggle="dropdown" href="111111">更多<span class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<?php for($i=1;$i<=mysql_num_rows($page);$i++) {
 					$rs = mysql_fetch_assoc($page);?>
