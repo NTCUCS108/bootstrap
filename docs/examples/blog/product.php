@@ -19,7 +19,14 @@
     <link href="blog.css" rel="stylesheet">
 
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
+	<style type="text/css">
+	gotop-sidebar {
+	float:right;
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	}
+	</style>
     </head>
 
   <body>
@@ -119,15 +126,15 @@ mysql_connect("localhost","root","admin");
 		<div class="row">
 			<?php $rs=mysql_fetch_row($data);echo "$rs[1]";?>
 		</div>	
+		
+		<div class="gotop-sidebar">      
+		<p>
+        <a href="#"><img src="img/arrow.png" width="64px";height="64px"></a>
+      </p>
+    </div>
     </div>	
 
-    <footer class="blog-footer">      
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
-
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
