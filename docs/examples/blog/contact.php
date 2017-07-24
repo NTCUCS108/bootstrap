@@ -13,10 +13,10 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>精德實業股份有限公司</title>
-
+    <link href="button.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="blog.css" rel="stylesheet">
 
@@ -34,33 +34,89 @@
   <body>
 <?php 
 include("page_connect.php");
-$page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' order by post_id");
 ?>
-    <div class="blog-masthead">
+<div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <ul class="nav navbar-nav">
-          <li><a class="blog-nav-item active" href="../carousel/test_home.php">精德實業股份有限公司</a></li>
-          <li><a class="blog-nav-item" href="../carousel/test_home.php">首頁</a></li>
-          <li><a class="blog-nav-item" href="company.php">公司簡介</a></li>
-          <li><a class="blog-nav-item" href="product.php">產品資訊</a></li>
-          <li><a class="blog-nav-item" href="contact.php">聯絡方式</a></li>
-		  <li><a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a></li>
-		  <?php if(mysql_num_rows($page)>0) {?>
-		  <li class="dropdown"><a class="dropdown-toggle blog-nav-item" data-toggle="dropdown" href="#">更多<span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<?php for($i=1;$i<=mysql_num_rows($page);$i++) {
-					$rs = mysql_fetch_assoc($page);?>
-				<li><a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a></li>
-				<?php }?>
-			</ul>
-		  </li>
-		  <?php }?>
-        </ul>
+          <div class="dropdown">
+            <button class="dropbtn"><a sytle="font-size:18px;" href="../carousel/test_home.php">精德實業股份有限公司</a></button>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="../carousel/test_home.php">首頁</a></button>
+            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '首頁' order by post_id");
+                  if(mysql_num_rows($page)>0){?>
+                  <div class="dropdown-content">
+                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
+                        $rs = mysql_fetch_assoc($page);?>
+                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                  <?php }?>
+                  </div>
+            <?php }?>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="company.php">公司簡介</a></button>
+            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '公司簡介' order by post_id");
+                  if(mysql_num_rows($page)>0){?>
+                  <div class="dropdown-content">
+                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
+                        $rs = mysql_fetch_assoc($page);?>
+                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                  <?php }?>
+                  </div>
+            <?php }?>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="product.php">產品資訊</a></button>
+            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '產品資訊' order by post_id");
+                  if(mysql_num_rows($page)>0){?>
+                  <div class="dropdown-content">
+                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
+                        $rs = mysql_fetch_assoc($page);?>
+                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                  <?php }?>
+                  </div>
+            <?php }?>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="contact.php">聯絡方式</a></button>
+            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '連絡方式' order by post_id");
+                  if(mysql_num_rows($page)>0){?>
+                  <div class="dropdown-content">
+                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
+                        $rs = mysql_fetch_assoc($page);?>
+                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                  <?php }?>
+                  </div>
+            <?php }?>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="../comment_withbrowse/comment_browse.php">留言板</a></button>
+            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '留言板' order by post_id");
+                  if(mysql_num_rows($page)>0){?>
+                  <div class="dropdown-content">
+                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
+                        $rs = mysql_fetch_assoc($page);?>
+                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                  <?php }?>
+                  </div>
+            <?php }?>
+          </div>
+          <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '更多' order by post_id");
+                if(mysql_num_rows($page)>0) {?>
+                <div class="dropdown">
+                  <button class="dropbtn"><a href="#">更多</a></button>
+                  <div class="dropdown-content">
+                    <?php for($i=1;$i<=mysql_num_rows($page);$i++) {
+                          $rs = mysql_fetch_assoc($page);?>
+                          <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                    <?php }?>
+                  </div>
+                </div>
+          <?php }?>
+             
         </nav>
       </div>
-    </div>
-	 
+</div>	 
 	<?php
 	mysql_close();
 	mysql_connect("localhost","root","admin");
