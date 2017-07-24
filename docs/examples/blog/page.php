@@ -1,6 +1,6 @@
 ﻿<?php
 	include("page_connect.php");
-	$check = mysql_query("select * from page where post_id = '$_GET[id]' and dead_time = '0000-00-00 00:00:00'");
+	$check = mysql_query("select * from page where post_id = '$_GET[id]' and dead_time = '0000-00-00 00:00:00' and parent != '測試'");
 	if(mysql_num_rows($check)==0)
 	{
 		echo '<script type="text/javascript">
