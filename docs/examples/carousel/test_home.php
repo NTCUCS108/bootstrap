@@ -16,6 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="button.css" rel="stylesheet">
 	<link href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/blog.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
     
@@ -34,24 +35,51 @@
 <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-		<ul class="nav navbar-nav">
-          <li><a class="blog-nav-item active" href="test_home.php">精德實業股份有限公司</a></li>
-          <li><a class="blog-nav-item" href="test_home.php">首頁</a></li>
-          <li><a class="blog-nav-item" href="../blog/company.php">公司簡介</a></li>
-          <li><a class="blog-nav-item" href="../blog/product.php">產品資訊</a></li>
-          <li><a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a></li>
-		  <li><a class="blog-nav-item" href="../comment_withbrowse/comment_browse.php">留言板</a></li>
-		  <?php if(mysql_num_rows($page)>0) {?>
-		  <li class="dropdown"><a class="dropdown-toggle blog-nav-item" data-toggle="dropdown" href="111111">更多<span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<?php for($i=1;$i<=mysql_num_rows($page);$i++) {
-					$rs = mysql_fetch_assoc($page);?>
-				<li><a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a></li>
-				<?php }?>
-			</ul>
-		  </li>
-		  <?php }?>
-        </ul>
+        <div class="dropdown">
+          <button class="dropbtn"><a sytle="font-size:18px;" href="test_home.php">精德實業股份有限公司</a></button>
+        </div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="test_home.php">首頁</a></button>
+            <div class="dropdown-content">
+            <a href=#>test</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><a href="../blog/company.php">公司簡介</a></button>
+             <div class="dropdown-content">
+             <a href=#>test</a>
+             </div>
+          </div>
+          <div class="dropdown">
+          <button class="dropbtn"><a href="../blog/product.php">產品資訊</a></button>
+           <div class="dropdown-content">
+             <a href=#>test</a>
+             </div>
+          </div>
+           <div class="dropdown">
+          <button class="dropbtn"><a href="../blog/contact.php">聯絡方式</a></button>
+          <div class="dropdown-content">
+             <a href=#>test</a>
+             </div>
+          </div>
+          <div class="dropdown">
+		  <button class="dropbtn"><a href="../comment_withbrowse/comment_browse.php">留言板</a></button>
+      <div class="dropdown-content">
+             <a href=#>test</a>
+             </div>
+          </div>
+          <?php if(mysql_num_rows($page)>0) {?>
+           <div class="dropdown">
+		  <button class="dropbtn"><a href="#">更多</a></button>
+			<div class="dropdown-content">
+      <?php for($i=1;$i<=mysql_num_rows($page);$i++) {
+          $rs = mysql_fetch_assoc($page);?>
+        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+        <?php }?>
+      </div>
+      </div>
+      <?php }?>
+             
 		</nav>
       </div>
 </div>
