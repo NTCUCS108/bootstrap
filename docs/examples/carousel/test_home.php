@@ -43,8 +43,8 @@
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        $p_rs = mysql_fetch_assoc($page);?>
+                        <a href="../blog/page.php?id=<?php echo "$p_rs[post_id]";?>"><?php echo "$p_rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
@@ -55,8 +55,8 @@
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        $p_rs = mysql_fetch_assoc($page);?>
+                        <a href="../blog/page.php?id=<?php echo "$p_rs[post_id]";?>"><?php echo "$p_rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
@@ -67,8 +67,8 @@
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        $p_rs = mysql_fetch_assoc($page);?>
+                        <a href="../blog/page.php?id=<?php echo "$p_rs[post_id]";?>"><?php echo "$p_rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
@@ -79,8 +79,8 @@
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        $p_rs = mysql_fetch_assoc($page);?>
+                        <a href="../blog/page.php?id=<?php echo "$p_rs[post_id]";?>"><?php echo "$p_rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
@@ -91,8 +91,8 @@
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        $p_rs = mysql_fetch_assoc($page);?>
+                        <a href="../blog/page.php?id=<?php echo "$p_rs[post_id]";?>"><?php echo "$p_rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
@@ -103,8 +103,8 @@
 		              <button class="dropbtn"><a href="#">更多</a></button>
 			            <div class="dropdown-content">
                     <?php for($i=1;$i<=mysql_num_rows($page);$i++) {
-                          $rs = mysql_fetch_assoc($page);?>
-                          <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                          $p_rs = mysql_fetch_assoc($page);?>
+                          <a href="../blog/page.php?id=<?php echo "$p_rs[post_id]";?>"><?php echo "$p_rs[name]";?></a>
                     <?php }?>
                   </div>
                 </div>
@@ -122,30 +122,30 @@
 	  <?php
 	  mysql_close();
 	  include("carousel_connect.php");
-		$data = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
-		for($i=1;$i<=mysql_num_rows($data);$i++)
+		$slide = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
+		for($i=1;$i<=mysql_num_rows($slide);$i++)
 		{
-			$rs=mysql_fetch_assoc($data);
+			$s_rs=mysql_fetch_assoc($slide);
 	  ?>
-        <li data-target="#myCarousel" data-slide-to="<?php echo "$rs[slide_id]";?>" <?php if($rs[slide_id]==0) echo 'class="active";'?>></li>
+        <li data-target="#myCarousel" data-slide-to="<?php echo "$s_rs[slide_id]";?>" <?php if($s_rs[slide_id]==0) echo 'class="active";'?>></li>
 	<?php
 	}
 	?>
       </ol>
       <div class="carousel-inner" role="listbox">
 	  <?php
-		$data = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
-		for($i=1;$i<=mysql_num_rows($data);$i++)
+		$slide = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
+		for($i=1;$i<=mysql_num_rows($slide);$i++)
 		{
-			$rs = mysql_fetch_assoc($data);
+			$s_rs = mysql_fetch_assoc($slide);
 	  ?>
-        <div class="item<?php if($rs["slide_id"]==0) echo ' active';?>">
-          <img src="<?php $img_src = explode("img/","$rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="<?php echo "$rs[slide_id]";?>" style='max-width:500px;max-height:300px;'>
+        <div class="item<?php if($s_rs["slide_id"]==0) echo ' active';?>">
+          <img src="<?php $img_src = explode("img/","$s_rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="<?php echo "$s_rs[slide_id]";?>" style='max-width:500px;max-height:300px;'>
           <div class="container">
             <div class="carousel-caption">
-              <h1><?php echo "$rs[headers]";?></h1>
-              <p><?php echo "$rs[description]";?></p>
-              <p><a class="btn btn-lg btn-primary" href="<?php echo "$rs[link_src]";?>" role="button"><?php echo "$rs[icon]";?></a></p>
+              <h1><?php echo "$s_rs[headers]";?></h1>
+              <p><?php echo "$s_rs[description]";?></p>
+              <p><a class="btn btn-lg btn-primary" href="<?php echo "$s_rs[link_src]";?>" role="button"><?php echo "$s_rs[icon]";?></a></p>
             </div>
           </div>
         </div>
@@ -172,27 +172,26 @@
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
+      <?php
+      mysql_close();
+      include("carousel_connect.php");
+      $circle = mysql_query("select * from circle where circle_id != '-1' order by circle_id");
+      if(mysql_num_rows($circle)>0){      
+      ?>
+        <div class="row">
+        <?php 
+        for($i=1;$i<=mysql_num_rows($circle);$i++){
+          $c_rs = mysql_fetch_assoc($circle);
+        ?>
+          <div class="col-lg-4">
+            <img class="img-circle" src="<?php $img_src = explode("img/","$c_rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+            <h2><?php echo $c_rs['headers'];?></h2>
+            <p><?php echo $c_rs['description'];?></p>
+            <p><a class="btn btn-default" href="<?php echo $c_rs['link_src'];?>" role="button"><?php echo $c_rs['icon'];?> &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+        <?php }?>
+        </div><!-- /.row -->
+      <?php }?>
 
       <!-- START THE FEATURETTES -->
 
