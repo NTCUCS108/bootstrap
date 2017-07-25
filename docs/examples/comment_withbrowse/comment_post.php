@@ -36,6 +36,9 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
 <link href="../blog/button.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Google Analystic -->
+  <?php include_once("analyticstracking.php") ?>
+
 <?php 
 mysql_close();
 include("../blog/page_connect.php");

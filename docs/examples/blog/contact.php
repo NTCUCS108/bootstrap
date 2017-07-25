@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="zh-hant">
   <head>
+
     <meta http-equiv="content-type" content="text/html";charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -32,6 +33,9 @@
     </head>
 
   <body>
+  <!-- Google Analystic -->
+  <?php include_once("analyticstracking.php") ?>
+  
 <?php 
 include("page_connect.php");
 ?>

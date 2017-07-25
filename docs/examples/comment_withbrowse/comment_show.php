@@ -27,6 +27,9 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 </head>
 
 <body>
+  <!-- Google Analystic -->
+  <?php include_once("analyticstracking.php") ?>
+
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">

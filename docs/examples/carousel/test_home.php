@@ -26,6 +26,9 @@
 	
 	</head>
   <body>
+  <!-- Google Analystic -->
+  <?php include_once("analyticstracking.php") ?>
+
   <?php
 	session_start();//2017-7-6修復browse_count_pic
 	include("page_connect.php");
