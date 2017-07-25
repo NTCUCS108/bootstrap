@@ -16,6 +16,9 @@ session_start();
 </head>
 
 <body>
+  <!-- Google Analystic -->
+  <?php include_once("analyticstracking.php") ?>
+
 <?php 
 include("../blog/page_connect.php");
 ?>
