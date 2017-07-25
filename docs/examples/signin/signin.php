@@ -5,10 +5,11 @@ if(isset($_POST["account"]) and isset($_POST["password"]))
 include("connect.php");
 $account = $_POST["account"];
 $password = $_POST["password"];
-$data = mysql_query("select * from admin where account = '$account' and password = '$password'");
-	if(mysql_num_rows($data)>=1)
+$user = mysql_query("select * from admin where account = '$account' and password = '$password'");
+	if(mysql_num_rows($user)>=1)
 	{
 		$_SESSION['login']="yes";
+    $_SESSION['user']=mysql_fetch_assoc($user);
 		header("location:../../../../backstage-AdminLTE local/starter.php");
 	}
 	else
