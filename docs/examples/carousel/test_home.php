@@ -123,7 +123,7 @@ else if($h_rs['homepage_select'] == 'html')
   echo "<div class='container marketing'>";
   $display = mysql_query("select * from homepage");
   $d_rs = mysql_fetch_assoc($display);
-  echo "<br><br><br><br>$d_rs[content]";
+  echo "<br><br><br>$d_rs[content]";
 }
 ?>
       <!-- /END THE FEATURETTES -->
