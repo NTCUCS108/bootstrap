@@ -2,7 +2,7 @@
     background-color: #2f2f2f;
     color: white;
     padding: 15px;
-    font-size: 16px;
+    font-size: 17px;
     border: none;
     cursor: pointer;
 }
@@ -32,7 +32,7 @@
     display: block;
 }
 .dropdown:hover a{
-  color: #516779;
+  color: #0077b3;
   text-decoration: none;
 }
 .dropdown-content a:hover {background-color: #f1f1f1}

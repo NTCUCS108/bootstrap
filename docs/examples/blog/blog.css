@@ -58,7 +58,7 @@ h6, .h6 {
 }
 .blog-nav-item:hover,
 .blog-nav-item:focus {
-  color: #516779;
+  color: #47C6BA;
   text-decoration: none;
 }
 
@@ -79,7 +79,7 @@ h6, .h6 {
 
 .blog-nav .active:hover,
 .blog-nav .active:focus {
-  color: #516779;
+  color: #47C6BA;
   text-decoration: none;
 }
 
@@ -96,7 +96,7 @@ h6, .h6 {
   margin-bottom: 0;
   font-size: 50px;
   font-weight: normal;
-  color: #4682B4;
+  color: #66CCCC;
 }
 .blog-description {
   font-size: 20px;

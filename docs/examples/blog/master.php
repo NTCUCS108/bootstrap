@@ -41,7 +41,7 @@ include("page_connect.php");
           <div class="dropdown">
             <!--<button class="dropbtn"><a sytle="font-size:18px;" href="../carousel/test_home.php">精德實業股份有限公司</a></button>-->
 			<a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/carousel/test_home.php">
-			<div class="rotate">	<img src="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/ginder.jpg" height="56px" alt="精德實業股份有限公司"/></div>
+			<div class="rotate">	<img src="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/ginder.jpg" height="57px" alt="精德實業股份有限公司"/></div>
 			</a>
           </div>
           <div class="dropdown">
