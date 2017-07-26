@@ -107,7 +107,7 @@
         <hr class="featurette-divider">
 
         <div class="row featurette">
-          <div class="col-md-7">
+          <div class="col-md-7 <?php if($i%2 == 0) echo 'pull-right';?>">
             <h2 class="featurette-heading"><?php echo $f_rs['headers'];?></h2>
             <p class="lead"><?php echo $f_rs['description'];?></p>
           </div>
