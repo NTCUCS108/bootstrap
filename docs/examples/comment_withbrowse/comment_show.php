@@ -14,34 +14,16 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 	mysql_query("update comment set browse_count = '$browse_count' where guestID = '$id'");
 }
 ?>
-
-<!DOCTYPE html>
-<html>
+<?php 
+	include("../blog/master.php");
+	?>
 <head>
 <meta charset="UTF-8" />
-<title>精德實業股份有限公司</title>
-<link rel="icon" href="../../favicon.ico">
-<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="../blog/blog.css" rel="stylesheet">
-
 </head>
-
 <body>
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php") ?>
-
-<div class="blog-masthead">
-    <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">精德實業股份有限公司</a>
-          <a class="blog-nav-item" href="../carousel/test_home.php">首頁</a>
-          <a class="blog-nav-item" href="../blog/company.php">公司簡介</a>
-          <a class="blog-nav-item" href="../blog/product.php">產品資訊</a>
-          <a class="blog-nav-item" href="../blog/contact.php">聯絡方式</a>
-		  <a class="blog-nav-item" href="comment_browse.php">留言板</a>
-        </nav>
-    </div>
-</div>
+ 
 
 <br><br><br>
 <div class="row">
@@ -109,4 +91,3 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 </div>
 </div>
 </body>
-</html>

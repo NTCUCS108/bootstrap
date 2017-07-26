@@ -5,7 +5,7 @@
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php"); ?>
   
-<?php include("master.php"); ?>
+<?php include("../blog/master.php"); ?>
 
   <?php
 	session_start();//2017-7-6修復browse_count_pic
