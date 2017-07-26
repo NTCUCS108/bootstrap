@@ -2,6 +2,7 @@
 
 ?>
 <head>
+	<meta charset="utf-8">
 	<link href="test_home.css" rel="stylesheet">
 </head>
   <body>
@@ -14,21 +15,15 @@
 	session_start();//2017-7-6修復browse_count_pic
 	include("page_connect.php");
   ?>
-
+   
   <!-- Carousel
     ================================================== -->
-    <?php
-    mysql_close();
-    include("carousel_connect.php");
-    $homepage_select = mysql_query("select * from homepage_select");
-    $h_rs = mysql_fetch_assoc($homepage_select);
-    //if($h_rs['homepage_select'] == "carousel")
-    //{
-    ?>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
 	  <?php
+	  mysql_close();
+	  include("carousel_connect.php");
 		$slide = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
 		for($i=1;$i<=mysql_num_rows($slide);$i++)
 		{
@@ -112,18 +107,17 @@
         <hr class="featurette-divider">
 
         <div class="row featurette">
-          <div class="col-md-7 <?php if($i%2 == 0) echo "pull-right";?>">
+          <div class="col-md-7">
             <h2 class="featurette-heading"><?php echo $f_rs['headers'];?></h2>
             <p class="lead"><?php echo $f_rs['description'];?></p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" style="width:300px;height:300px;" src="<?php $img_src = explode("img/","$f_rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="Generic placeholder image">
+            <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" style="width:500px;height:500px;" src="<?php $img_src = explode("img/","$f_rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="Generic placeholder image">
           </div>
         </div>
-      <?php }?>
-      <?php }?>
-
+      <?php }}?>
       <hr class="featurette-divider">
+
       <!-- /END THE FEATURETTES -->
 
 
@@ -139,5 +133,4 @@
       </footer>
 
     </div><!-- /.container -->
-
 </body>
