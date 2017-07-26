@@ -1,18 +1,11 @@
 <?php
 session_start();
-
 ?>
-
-<!DOCTYPE html>
-<html>
+<?php 
+	include("../blog/master.php");
+?>
 <head>
 <meta charset="UTF-8" />
-<title>精德實業股份有限公司</title>
-<link rel="icon" href="../../favicon.ico">
-<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="../blog/blog.css" rel="stylesheet">
-<link href="../blog/button.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -22,88 +15,6 @@ session_start();
 <?php 
 include("../blog/page_connect.php");
 ?>
-<div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <div class="dropdown">
-            <button class="dropbtn"><a sytle="font-size:18px;" href="../carousel/test_home.php">精德實業股份有限公司</a></button>
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn"><a href="../carousel/test_home.php">首頁</a></button>
-            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '首頁' order by post_id");
-                  if(mysql_num_rows($page)>0){?>
-                  <div class="dropdown-content">
-                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
-                  <?php }?>
-                  </div>
-            <?php }?>
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn"><a href="../blog/company.php">公司簡介</a></button>
-            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '公司簡介' order by post_id");
-                  if(mysql_num_rows($page)>0){?>
-                  <div class="dropdown-content">
-                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
-                  <?php }?>
-                  </div>
-            <?php }?>
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn"><a href="../blog/product.php">產品資訊</a></button>
-            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '產品資訊' order by post_id");
-                  if(mysql_num_rows($page)>0){?>
-                  <div class="dropdown-content">
-                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
-                  <?php }?>
-                  </div>
-            <?php }?>
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn"><a href="../blog/contact.php">聯絡方式</a></button>
-            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '連絡方式' order by post_id");
-                  if(mysql_num_rows($page)>0){?>
-                  <div class="dropdown-content">
-                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
-                  <?php }?>
-                  </div>
-            <?php }?>
-          </div>
-          <div class="dropdown">
-		        <button class="dropbtn"><a href="comment_browse.php">留言板</a></button>
-            <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '留言板' order by post_id");
-                  if(mysql_num_rows($page)>0){?>
-                  <div class="dropdown-content">
-                  <?php for($i=1;$i<=mysql_num_rows($page);$i++){
-                        $rs = mysql_fetch_assoc($page);?>
-                        <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
-                  <?php }?>
-                  </div>
-            <?php }?>
-          </div>
-          <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '更多' order by post_id");
-                if(mysql_num_rows($page)>0) {?>
-                <div class="dropdown">
-		              <button class="dropbtn"><a href="#">更多</a></button>
-			            <div class="dropdown-content">
-                    <?php for($i=1;$i<=mysql_num_rows($page);$i++) {
-                          $rs = mysql_fetch_assoc($page);?>
-                          <a href="../blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
-                    <?php }?>
-                  </div>
-                </div>
-          <?php }?>
-             
-		    </nav>
-      </div>
-</div>
 
 <br><br><br>
 <?php 
@@ -230,13 +141,5 @@ else
 	</div>
 	</div>
 </section>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    
 </body>
-</html>
