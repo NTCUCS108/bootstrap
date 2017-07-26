@@ -17,6 +17,9 @@
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php") ?>
 
+<?php 
+include("page_connect.php");
+?>
 
 <?php 
 mysql_close();
