@@ -1,6 +1,19 @@
 <?php
 session_start();
-include("comment_connect.php");
+
+?>
+
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <!-- Google Analystic -->
+  <?php include_once("analyticstracking.php") ?>
+ 
+<?php 
+	include("../blog/master.php");
+	mysql_close();
+	include("comment_connect.php");
 if(!isset($_GET["id"]))
 	header("location:comment_browse.php");
 $id = $_GET["id"];
@@ -13,17 +26,7 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 	$browse_count++;
 	mysql_query("update comment set browse_count = '$browse_count' where guestID = '$id'");
 }
-?>
-<?php 
-	include("../blog/master.php");
 	?>
-<head>
-<meta charset="UTF-8" />
-</head>
-<body>
-  <!-- Google Analystic -->
-  <?php include_once("analyticstracking.php") ?>
- 
 
 <br><br><br>
 <div class="row">
