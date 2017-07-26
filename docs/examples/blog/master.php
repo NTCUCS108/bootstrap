@@ -45,61 +45,61 @@ include("page_connect.php");
 			</a>
           </div>
           <div class="dropdown">
-            <button class="dropbtn"><a href="../carousel/test_home.php">首頁</a></button>
+            <button class="dropbtn"><a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/carousel/test_home.php">首頁</a></button>
             <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '首頁' order by post_id");
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
                         $rs = mysql_fetch_assoc($page);?>
-                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        <a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
           </div>
           <div class="dropdown">
-            <button class="dropbtn"><a href="company.php">公司簡介</a></button>
+            <button class="dropbtn"><a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/company.php">公司簡介</a></button>
             <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '公司簡介' order by post_id");
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
                         $rs = mysql_fetch_assoc($page);?>
-                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        <a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
           </div>
           <div class="dropdown">
-            <button class="dropbtn"><a href="product.php">產品資訊</a></button>
+            <button class="dropbtn"><a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/product.php">產品資訊</a></button>
             <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '產品資訊' order by post_id");
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
                         $rs = mysql_fetch_assoc($page);?>
-                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        <a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
           </div>
           <div class="dropdown">
-            <button class="dropbtn"><a href="contact.php">聯絡方式</a></button>
+            <button class="dropbtn"><a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/contact.php">聯絡方式</a></button>
             <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '連絡方式' order by post_id");
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
                         $rs = mysql_fetch_assoc($page);?>
-                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        <a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
           </div>
           <div class="dropdown">
-            <button class="dropbtn"><a href="../comment_withbrowse/comment_browse.php">留言板</a></button>
+            <button class="dropbtn"><a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/comment_withbrowse/comment_browse.php">留言板</a></button>
             <?php $page = mysql_query("select * from page where dead_time = '0000-00-00 00:00:00' and parent = '留言板' order by post_id");
                   if(mysql_num_rows($page)>0){?>
                   <div class="dropdown-content">
                   <?php for($i=1;$i<=mysql_num_rows($page);$i++){
                         $rs = mysql_fetch_assoc($page);?>
-                        <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                        <a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
                   <?php }?>
                   </div>
             <?php }?>
@@ -111,7 +111,7 @@ include("page_connect.php");
                   <div class="dropdown-content">
                     <?php for($i=1;$i<=mysql_num_rows($page);$i++) {
                           $rs = mysql_fetch_assoc($page);?>
-                          <a href="page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
+                          <a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/blog/page.php?id=<?php echo "$rs[post_id]";?>"><?php echo "$rs[name]";?></a>
                     <?php }?>
                   </div>
                 </div>
