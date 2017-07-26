@@ -24,7 +24,7 @@ $token = strlen($num);
 for($i=0;$i<$token;$i++)
 {
 	$this_num = substr($num,$i,1);
-	echo "<img src=../../../browse_count/$this_num.JPG width=100 height=100>";//show picture
+	echo "<img src=../../../browse_count/$this_num.JPG width=50 height=50>";//show picture
 }
 ?>
 </body>

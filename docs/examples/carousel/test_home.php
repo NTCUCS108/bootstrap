@@ -1,8 +1,4 @@
-<?php
-
-?>
 <head>
-	<meta charset="utf-8">
 	<link href="test_home.css" rel="stylesheet">
 </head>
   <body>
@@ -13,17 +9,23 @@
 
   <?php
 	session_start();//2017-7-6修復browse_count_pic
-	include("page_connect.php");
+  mysql_close();
+      include("carousel_connect.php");
+      $homepage_select = mysql_query("select * from homepage_select");
+      $h_rs = mysql_fetch_assoc($homepage_select);
   ?>
    
   <!-- Carousel
     ================================================== -->
+    <?php
+      
+      if($h_rs['homepage_select'] == 'carousel')
+      {
+    ?>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
 	  <?php
-	  mysql_close();
-	  include("carousel_connect.php");
 		$slide = mysql_query("select * from slide where slide_id != '-1' order by slide_id");
 		for($i=1;$i<=mysql_num_rows($slide);$i++)
 		{
@@ -75,8 +77,6 @@
 
       <!-- Three columns of text below the carousel -->
       <?php
-      mysql_close();
-      include("carousel_connect.php");
       $circle = mysql_query("select * from circle where circle_id != '-1' order by circle_id");
       if(mysql_num_rows($circle)>0){      
       ?>
@@ -95,10 +95,10 @@
         </div><!-- /.row -->
       <?php }?>
 
+
+
       <!-- START THE FEATURETTES -->
       <?php
-      mysql_close();
-      include("carousel_connect.php");
       $featurette = mysql_query("select * from featurette where featurette_id != '-1' order by featurette_id");
       if(mysql_num_rows($featurette)>0){      
         for($i=1;$i<=mysql_num_rows($featurette);$i++){
@@ -112,12 +112,20 @@
             <p class="lead"><?php echo $f_rs['description'];?></p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" style="width:500px;height:500px;" src="<?php $img_src = explode("img/","$f_rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="Generic placeholder image">
+            <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" style="width:300px;height:300px;" src="<?php $img_src = explode("img/","$f_rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="Generic placeholder image">
           </div>
         </div>
       <?php }}?>
       <hr class="featurette-divider">
-
+<?php }
+else if($h_rs['homepage_select'] == 'html')
+{
+  echo "<div class='container marketing'>";
+  $display = mysql_query("select * from homepage");
+  $d_rs = mysql_fetch_assoc($display);
+  echo "<br><br><br><br>$d_rs[content]";
+}
+?>
       <!-- /END THE FEATURETTES -->
 
 

@@ -39,10 +39,8 @@ include("page_connect.php");
       <div class="container">
         <nav class="blog-nav">
           <div class="dropdown">
-            <!--<button class="dropbtn"><a sytle="font-size:18px;" href="../carousel/test_home.php">精德實業股份有限公司</a></button>
-			<a href="../carousel/test_home.php">-->
-			<div class="rotate">	<img src="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/ginder.jpg" height="55px" alt="精德實業股份有限公司"/></div>
-			</a>
+			<div class="rotate">	<img src="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/ginder.jpg" height="55px" alt="精德實業股份有限公司"></div>
+
           </div>
           <div class="dropdown">
             <button class="dropbtn"><a href="../carousel/test_home.php">首頁</a></button>
