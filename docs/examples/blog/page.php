@@ -18,7 +18,11 @@
 include("page_connect.php");
 include("master.php");
 ?>
-
+<html>
+<head>
+	<link rel="icon" href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/favicon.ico">
+</head>
+<body>
 	<br><br><br>
 	<div class="container">
 		<div class="row">
@@ -41,3 +45,5 @@ include("master.php");
         <a href="#">Back to top</a>
       </p>
     </footer>
+	</body>
+</html>

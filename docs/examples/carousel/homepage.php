@@ -1,7 +1,4 @@
-<head>
-	<link href="homepage.css" rel="stylesheet">
-</head>
-  <body>
+
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php"); ?>
 
@@ -14,7 +11,12 @@
       $homepage_select = mysql_query("select * from homepage_select");
       $h_rs = mysql_fetch_assoc($homepage_select);
   ?>
-
+	<html>
+	<head>
+		<link href="homepage.css" rel="stylesheet">
+		<link rel="icon" href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/favicon.ico">
+	</head>
+	  <body>
   <!-- Carousel
     ================================================== -->
     <?php
@@ -142,3 +144,4 @@ else if($h_rs['homepage_select'] == 'html')
 
     </div><!-- /.container -->
 </body>
+</html>
