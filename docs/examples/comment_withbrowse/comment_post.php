@@ -20,12 +20,13 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
 	if(isset($guestName) and isset($guestEmail) and isset($guestGender) and isset($guestSubject) and isset($guestContent))
 	{
 		$check = 1;
+		$guestContent = str_replace("\n","<br>",$guestContent);
 		mysql_query("Insert into comment value('','$guestName','$guestEmail','$guestGender','$guestSubject','$createtime','$guestContentType','$guestContent','','','0','0')");
 		header("location:comment_browse.php");
 	}
-}	
+}
 ?>
-<?php 
+<?php
 	include("../blog/master.php");
 ?>
 <head>
@@ -35,7 +36,7 @@ if(isset($guestName) or isset($guestEmail) or isset($guestGender) or isset($gues
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php") ?>
 
-<?php 
+<?php
 mysql_close();
 include("../blog/page_connect.php");
 ?>
@@ -76,7 +77,7 @@ include("../blog/page_connect.php");
 				留言類型：<select name="guestContentType" width="60%" border="1" type="button" class="btn btn-success 	dropdown-toggle" data-toggle="dropdown">
 						<span class="fa fa-caret-down"></span>
 						<ul class="dropdown-menu">
-						<?php 
+						<?php
 							mysql_close();
 							include("comment_connect.php");
 							$type = mysql_query("select * from guestcontenttype where live = 1 order by post_id");
@@ -85,7 +86,7 @@ include("../blog/page_connect.php");
 								$t_rs = mysql_fetch_assoc($type);
 								echo "<option value=$t_rs[name]";if($guestContentType=="$t_rs[name]") echo ' selected';echo ">$t_rs[name]</option>";
 							}
-						?>		
+						?>
 							<option value="其他" <?php if($_POST['guestContentType'] == '其他') echo "selected";?>>其他</option>
 					   </ul>
 					   </select>
