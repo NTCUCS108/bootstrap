@@ -1,24 +1,24 @@
 <head>
-	<link href="test_home.css" rel="stylesheet">
+	<link href="homepage.css" rel="stylesheet">
 </head>
   <body>
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php"); ?>
-  
+
 <?php include("../blog/master.php"); ?>
 
   <?php
 	session_start();//2017-7-6修復browse_count_pic
   mysql_close();
-      include("carousel_connect.php");
+      include("homepage_connect.php");
       $homepage_select = mysql_query("select * from homepage_select");
       $h_rs = mysql_fetch_assoc($homepage_select);
   ?>
-   
+
   <!-- Carousel
     ================================================== -->
     <?php
-      
+
       if($h_rs['homepage_select'] == 'carousel')
       {
     ?>
@@ -56,7 +56,7 @@
 		<?php
 		}
 		?>
-        
+
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -78,10 +78,10 @@
       <!-- Three columns of text below the carousel -->
       <?php
       $circle = mysql_query("select * from circle where circle_id != '-1' order by circle_id");
-      if(mysql_num_rows($circle)>0){      
+      if(mysql_num_rows($circle)>0){
       ?>
         <div class="row">
-        <?php 
+        <?php
         for($i=1;$i<=mysql_num_rows($circle);$i++){
           $c_rs = mysql_fetch_assoc($circle);
         ?>
@@ -100,7 +100,7 @@
       <!-- START THE FEATURETTES -->
       <?php
       $featurette = mysql_query("select * from featurette where featurette_id != '-1' order by featurette_id");
-      if(mysql_num_rows($featurette)>0){      
+      if(mysql_num_rows($featurette)>0){
         for($i=1;$i<=mysql_num_rows($featurette);$i++){
           $f_rs = mysql_fetch_assoc($featurette);
       ?>
@@ -133,7 +133,7 @@ else if($h_rs['homepage_select'] == 'html')
       <footer>
 	  <?php
 		include("../../../browse_count/browse_count_pic.php");
-		//2017-7-5Warning: session_start(): Cannot send session cache limiter - headers already sent (output started at D:\AppServ\www\bootstrap-3.3.1\docs\examples\carousel\test_home.php:226) in D:\AppServ\www\bootstrap-3.3.1\browse_count\browse_count_pic.php on line 5
+		//2017-7-5Warning: session_start(): Cannot send session cache limiter - headers already sent (output started at D:\AppServ\www\bootstrap-3.3.1\docs\examples\carousel\homepage.php:226) in D:\AppServ\www\bootstrap-3.3.1\browse_count\browse_count_pic.php on line 5
 		//2017-7-6已處理，session_start()需在顯示網頁前執行
 	  ?><br>
         <p class="pull-right"><a href="#">Back to top</a></p>
