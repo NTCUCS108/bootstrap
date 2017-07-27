@@ -4,18 +4,17 @@
 	if(mysql_num_rows($check)==0)
 	{
 		echo '<script type="text/javascript">
-           window.location = "http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/carousel/test_home.php"
+           window.location = "http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/carousel/homepage.php"
 			</script>';
 	}
 	$c_rs = mysql_fetch_assoc($check);
 	$data = mysql_query("select * from page_data where name = '$c_rs[name]'");
 	$d_rs = mysql_fetch_assoc($data);
 ?>
-  <body>
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php") ?>
 
-<?php 
+<?php
 include("page_connect.php");
 include("master.php");
 ?>
@@ -28,7 +27,7 @@ include("master.php");
 					<div class="box-header">
 					</div>
 					<div class="box-body" >
-					<?php 
+					<?php
 							echo "$d_rs[content]";
 					?>
 					</div>
@@ -37,7 +36,7 @@ include("master.php");
 		</div>
   </div>
 
-    <footer class="blog-footer">      
+    <footer class="blog-footer">
       <p>
         <a href="#">Back to top</a>
       </p>
