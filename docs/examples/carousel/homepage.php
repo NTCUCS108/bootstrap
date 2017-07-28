@@ -91,7 +91,7 @@
             <img class="img-circle" src="<?php $img_src = explode("img/","$c_rs[img_src]"); echo "img/$img_src[1]";//位址問題img_src為後台看的位址?>" alt="Generic placeholder image" style="width: 140px; height: 140px;">
             <h2><?php echo $c_rs['headers'];?></h2>
             <p><?php echo $c_rs['description'];?></p>
-            <p><a class="btn btn-default" href="<?php echo $c_rs['link_src'];?>" role="button"><?php echo $c_rs['icon'];?> &raquo;</a></p>
+            <p><a class="btn btn-default" href="<?php echo $c_rs['link_src'];?>" role="button"><?php echo   $c_rs['icon'];?> &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
         <?php }?>
         </div><!-- /.row -->
@@ -139,7 +139,7 @@ else if($h_rs['homepage_select'] == 'html')
 		//2017-7-6已處理，session_start()需在顯示網頁前執行
 	  ?><br>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>Copyright, &copy; 2017 精德股份有限公司</p>
       </footer>
 
     </div><!-- /.container -->
