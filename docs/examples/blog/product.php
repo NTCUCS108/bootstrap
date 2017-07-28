@@ -10,6 +10,36 @@
 	right:0px;
 	bottom:0px;
 	}
+	
+	#pacman {
+	margin:0;
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ffde00;
+    border-left: 20px solid #ffde00;
+    border-bottom: 20px solid #ffde00;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; 
+		transition: border-top 2s ease,border-left 2s ease,border-bottom  2s ease;
+		-moz-transition: border-top 2s ease,border-left 2s ease, border-bottom  2s ease;
+		-webkit-transition: border-top 2s ease,border-left 2s ease, border-bottom  2s ease;
+		-ms-transition: border-top 2s ease,border-left 2s ease, border-bottom 2s ease;
+		-o-webkit-transition: border-top 2s ease, border-left 2s ease, border-bottom  2s ease;
+	}	
+	#pacman:hover{
+		border-top: 20px solid #3AD646;
+		border-left: 20px solid #3AD646;
+		border-bottom: 20px solid #3AD646;
+	}
+	table{
+		border: 2px #c6d3fe solid;
+		border-collapse:collapse;
+		line-height: 30px;
+		letter-spacing: 3px;
+  }
 </style>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
@@ -61,10 +91,11 @@ include("page_connect.php");
 				$d_rs = mysql_fetch_row($data);
 				?>
 				<div class="blog-post" id="<?php echo $d_rs[5];?>">
-				<h3 class="blog-post-title"><?php echo $d_rs[3];?></h3>
-				<table class="blog-table">
+				
+				<div id="pacman"></div><h3 class="blog-post-title"><?php echo $d_rs[3];?></h3>
+				
 				<br><?php echo "$d_rs[4]";?>
-				</table>
+				
 				</div>
 				<?php } ?>
 			</div>
