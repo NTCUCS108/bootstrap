@@ -1,5 +1,8 @@
 <?php
 session_start();
+include("comment_connect.php");
+if(mysql_num_rows(mysql_query("select * from comment where guestID = '$_GET[id]'")) == 0)
+header("location:comment_browse.php");
 
 ?>
 
@@ -9,14 +12,12 @@ session_start();
 <body>
   <!-- Google Analystic -->
   <?php include_once("analyticstracking.php") ?>
- 
-<?php 
-	include("../blog/master.php");
-	mysql_close();
-	include("comment_connect.php");
-if(!isset($_GET["id"]))
-	header("location:comment_browse.php");
-$id = $_GET["id"];
+<?php
+mysql_close();
+include("../blog/master.php");
+mysql_close();
+include("comment_connect.php");
+$id = $_GET['id'];
 $data = mysql_query("select * from comment where guestID = '$id'");
 $rs = mysql_fetch_assoc($data);
 if($_SESSION["check $id"]!="v")//瀏覽人數更新
@@ -63,14 +64,6 @@ if($_SESSION["check $id"]!="v")//瀏覽人數更新
 	<tr>
 		<td width="20%"><?php echo "暱稱："?></td>
 		<td width="80%"><?php echo $rs[guestName]?></td>
-	</tr>
-	<tr>
-		<td width="20%"><?php echo "信箱："?></td>
-		<td width="80%"><?php echo $rs[guestEmail]?></td>
-	</tr>
-	<tr>
-		<td width="20%"><?php echo "性別："?></td>
-		<td width="80%"><?php if($rs[guestGender]==0)echo "女";else echo "男";?></td>
 	</tr>
 	<tr>
 		<td width="20%"><?php echo "內容："?></td>
