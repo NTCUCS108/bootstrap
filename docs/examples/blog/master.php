@@ -41,7 +41,7 @@ include("page_connect.php");
           <div class="dropdown">
             <!--<button class="dropbtn"><a sytle="font-size:18px;" href="../carousel/homepage.php">精德實業股份有限公司</a></button>-->
 			<a href="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/carousel/homepage.php">
-			<div class="rotate">	<img src="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/ginder.jpg" height="57px" alt="精德實業股份有限公司"/></div>
+			<div class="rotate">	<img src="http://ntcucsintern.ddns.net/bootstrap-3.3.1/docs/examples/ginder.jpg" height="57px" alt="精德實業股份有限公司"/></div>
 			</a>
           </div>
           <div class="dropdown">
@@ -129,6 +129,8 @@ include("page_connect.php");
     <script src="../../assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
 
 </body>
 

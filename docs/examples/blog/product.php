@@ -41,5 +41,14 @@ mysql_connect("localhost","root","admin");
       </p>
     </div>
     </div>	
-
+ <!-- FOOTER -->
+      <footer>
+	  <?php
+		include("../../../browse_count/browse_count_pic.php");
+		//2017-7-5Warning: session_start(): Cannot send session cache limiter - headers already sent (output started at D:\AppServ\www\bootstrap-3.3.1\docs\examples\carousel\homepage.php:226) in D:\AppServ\www\bootstrap-3.3.1\browse_count\browse_count_pic.php on line 5
+		//2017-7-6已處理，session_start()需在顯示網頁前執行
+	  ?><br>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Copyright, &copy; 2017 精德股份有限公司</p>
+      </footer>
   </body>
