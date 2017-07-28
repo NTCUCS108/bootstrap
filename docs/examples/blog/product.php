@@ -98,7 +98,9 @@ include("page_connect.php");
 			</div>
 		</div>
     </div>	
- <!-- FOOTER -->
+  <!-- FOOTER -->
+	<div class="row">
+	  <div class="col-md-offset-2 col-md-8">
       <footer>
 	  <?php
 		include("../../../browse_count/browse_count_pic.php");
@@ -108,4 +110,6 @@ include("page_connect.php");
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Copyright, &copy; 2017 精德股份有限公司</p>
       </footer>
+      </div>
+    </div>
   </body>
